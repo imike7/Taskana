@@ -1,0 +1,16 @@
+.mainContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.mainContainer__header {
+  position: sticky;
+  top: 0;
+  height: 88px;
+  padding: 24px;
+  background-color: var(--neutral-light-0);
+}
+

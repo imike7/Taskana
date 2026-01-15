@@ -1,0 +1,43 @@
+@font-face {
+  font-family: 'SourceSans3';
+  src: url('./fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-width: 1280px;
+}
+
+body {
+  font-family: 'SourceSans3', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--neutral-light-800);
+  background-color: var(--neutral-light-0);
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.25;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: calc(32 /24);
+  margin: 0;
+}
+
+h3 {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: calc(24 /18);
+}
+

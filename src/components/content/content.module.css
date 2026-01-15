@@ -1,0 +1,9 @@
+.content {
+  display: grid;
+  grid-template-columns: 204px 1fr 400px;
+  height: calc(100vh - var(--header-height));
+}
+
+.content > * {
+  max-height: 100%;
+}

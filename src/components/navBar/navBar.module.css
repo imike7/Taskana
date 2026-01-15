@@ -1,0 +1,16 @@
+.navBar {
+  display: flex;
+  flex-direction: column;
+  max-width: 204px;
+  padding: 24px 16px;
+  background-color: var(--neutral-light-100);
+  border-right: var(--border);
+  overflow-y: auto;
+}
+
+.navBar__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+
