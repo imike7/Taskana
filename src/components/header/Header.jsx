@@ -1,19 +1,17 @@
 import styles from './header.module.css'
 
-import Button from "../button/Button.jsx";
-import Logo from "../logo/Logo.jsx";
+import Button from "../button";
+import Logo from "../logo";
 
-const Header = (props) => {
-  const {
-  } = props
+const Header = () => {
 
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <Logo className={styles.header__logo}/>
       <Button iconName="plus">
         Создать
       </Button>
-    </div>
+    </header>
   )
 }
 

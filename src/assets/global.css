@@ -1,10 +1,6 @@
-@font-face {
-  font-family: 'SourceSans3';
-  src: url('./fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
+@import url(./normalize.css);
+@import url(./variables.css);
+@import url(./fonts.css);
 
 html, body, #root {
   height: 100%;
@@ -31,13 +27,13 @@ h1 {
 h2 {
   font-weight: 700;
   font-size: 24px;
-  line-height: calc(32 /24);
+  line-height: calc(4 / 3);
   margin: 0;
 }
 
 h3 {
   font-weight: 700;
   font-size: 18px;
-  line-height: calc(24 /18);
+  line-height: calc(4 /3);
 }
 

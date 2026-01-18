@@ -1,3 +1,5 @@
+import {classNames} from "../../utils";
+
 const Logo = (props) => {
   const {
     className = '',
@@ -7,8 +9,8 @@ const Logo = (props) => {
 
   return (
     <a
-      className={`logo ${className}`}
-      href="/"
+      className={classNames(className, 'logo')}
+      href="#"
       title={title}
       aria-label={title}
     >

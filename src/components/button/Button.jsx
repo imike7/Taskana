@@ -1,5 +1,6 @@
-import Icon from "../icon/icon/Icon.jsx";
+import Icon from "../icon/icon";
 import styles from './button.module.css'
+import {classNames} from "../../utils";
 
 const Button = (props) => {
   const {
@@ -23,7 +24,7 @@ const Button = (props) => {
 
   return (
     <Component
-      className={`${button} ${isDark ? buttonDark : ''} ${className || ''}`}
+      className={classNames(className, button, isDark && buttonDark)}
       type={type}
       {...extraAttrs}
     >

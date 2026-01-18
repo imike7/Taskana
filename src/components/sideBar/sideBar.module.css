@@ -1,25 +1,15 @@
 .sideBar {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 24px;
+  width: var(--sidebar-width);
+  padding: 24px;
   background-color: var(--neutral-light-100);
   border-left: var(--border);
   overflow-y: auto;
-}
-
-.sideBar__inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  width: 352px;
-}
-
-.sideBar__image {
-  width: 231px;
-  height: 168px;
-  background-image: url("../../assets/icons/note.svg");
-  background-size: cover;
+  overflow-x: hidden;
 }
 
 .sideBar__inner svg {

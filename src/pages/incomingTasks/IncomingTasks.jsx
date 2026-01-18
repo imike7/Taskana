@@ -1,10 +1,8 @@
 import styles from './incomingTasks.module.css'
-import Footer from "../../components/footer/Footer.jsx";
-import MainContainer from "../../components/mainContainer/MainContainer.jsx";
+import Footer from "../../components/footer";
+import MainContainer from "../../components/mainContainer";
 
-const IncomingTasks = (props) => {
-  const {
-  } = props
+const IncomingTasks = () => {
 
   return (
     <div className={styles.incomingTasks}>

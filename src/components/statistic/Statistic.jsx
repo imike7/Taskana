@@ -1,5 +1,4 @@
-const Statistic = (props) => {
-  const {} = props
+const Statistic = () => {
 
   return (
     <div>

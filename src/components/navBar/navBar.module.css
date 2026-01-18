@@ -1,7 +1,7 @@
 .navBar {
   display: flex;
   flex-direction: column;
-  max-width: 204px;
+  width: var(--nav-width);
   padding: 24px 16px;
   background-color: var(--neutral-light-100);
   border-right: var(--border);

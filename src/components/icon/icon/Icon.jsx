@@ -1,5 +1,5 @@
-import Plus from "../icons/plus/Plus.jsx";
-import Storage from "../icons/storage/Storage.jsx";
+import Plus from "../icons/plus";
+import Storage from "../icons/storage";
 
 const allIcons = {
   plus: Plus,

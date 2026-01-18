@@ -1,8 +1,7 @@
 import styles from './navBar.module.css'
-import Button from "../button/Button.jsx";
+import Button from "../button";
 
-const NavBar = (props) => {
-  const {} = props
+const NavBar = () => {
 
   return (
     <nav className={styles.navBar}>

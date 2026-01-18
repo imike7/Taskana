@@ -1,9 +1,8 @@
 import styles from './appLayout.module.css'
-import Header from "../../components/header/Header.jsx";
-import Content from "../../components/content/Content.jsx";
+import Header from "../../components/header";
+import Content from "../../components/content";
 
-const AppLayout = (props) => {
-  const {} = props
+const AppLayout = () => {
 
   return (
     <div className={styles.appLayout}>

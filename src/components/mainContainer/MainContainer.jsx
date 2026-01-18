@@ -1,14 +1,13 @@
 import styles from "./mainContainer.module.css";
-import TaskList from "../taskList/TaskList.jsx";
+import TaskList from "../taskList";
 
-const MainContainer = (props) => {
-  const {} = props
+const MainContainer = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.mainContainer__header}>
+      <header className={styles.mainContainer__header}>
         <h1>Входящие</h1>
-      </div>
+      </header>
       <TaskList />
     </div>
   )

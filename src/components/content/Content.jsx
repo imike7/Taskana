@@ -1,17 +1,16 @@
 import styles from './content.module.css'
 
-import NavBar from "../navBar/navBar.jsx";
-import IncomingTasks from "../../pages/incomingTasks/IncomingTasks.jsx";
-import SideBar from "../sideBar/SideBar.jsx";
+import NavBar from "../navBar";
+import IncomingTasks from "../../pages/incomingTasks";
+import SideBar from "../sideBar";
 
-const Content = (props) => {
-  const {} = props
+const Content = () => {
 
   return (
     <div className={styles.content}>
       <NavBar />
       <IncomingTasks />
-      <SideBar className="taskana__help"/>
+      <SideBar className="content"/>
     </div>
   )
 }
