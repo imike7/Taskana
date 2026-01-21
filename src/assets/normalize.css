@@ -206,3 +206,9 @@ svg * {
     scroll-behavior: auto !important;
   }
 }
+
+li, ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

@@ -8,7 +8,7 @@
   overflow-y: auto;
 }
 
-.mainContainer__header {
+.header {
   position: sticky;
   top: 0;
   height: 88px;

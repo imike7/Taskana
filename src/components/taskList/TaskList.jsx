@@ -1,18 +1,16 @@
 import styles from './taskList.module.css'
-import taskListImage from '../../assets/icons/well-done.svg'
+import taskListImage from '@/assets/icons/well-done.svg'
+
+const HEADER = "Все твои задачи организованы как надо"
+const DESCRIPTION = "Отличная работа! Ты большой молодец!"
 
 const TaskList = () => {
 
-  const {
-    taskList__body,
-    taskList__description,
-  } = styles
-
   return (
-    <div className={taskList__body}>
-        <div className={taskList__description}>
-          <h2>Все твои задачи организованы как надо</h2>
-          <p>Отличная работа! Ты большой молодец!</p>
+    <div className={styles.taskList}>
+        <div className={styles.description}>
+          <h2>{HEADER}</h2>
+          <p>{DESCRIPTION}</p>
         </div>
         <img
           src={taskListImage}

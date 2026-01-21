@@ -1,11 +1,11 @@
 import styles from "./mainContainer.module.css";
-import TaskList from "../taskList";
+import { TaskList } from "@/components";
 
 const MainContainer = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <header className={styles.mainContainer__header}>
+      <header className={styles.header}>
         <h1>Входящие</h1>
       </header>
       <TaskList />

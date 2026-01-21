@@ -2,11 +2,10 @@
 @import url(./variables.css);
 @import url(./fonts.css);
 
-html, body, #root {
+html {
+  width: 100%;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  min-width: 1280px;
+  overflow-y: hidden;
 }
 
 body {
@@ -15,6 +14,9 @@ body {
   line-height: 1.5;
   color: var(--neutral-light-800);
   background-color: var(--neutral-light-0);
+  max-width: 100%;
+  min-height: 100vh;
+  min-width: 1280px;
 }
 
 h1 {

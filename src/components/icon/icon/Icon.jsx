@@ -1,5 +1,7 @@
 import Plus from "../icons/plus";
 import Storage from "../icons/storage";
+import { classNames } from "@/utils";
+import styles from "./icon.module.css";
 
 const allIcons = {
   plus: Plus,
@@ -8,28 +10,21 @@ const allIcons = {
 
 const Icon = (props) => {
   const {
+    className,
     name,
-    size = 24,
-    color = 'currentColor',
-    onClick,
-    style,
   } = props
 
   const IconComponent = allIcons[name]
 
   if (!IconComponent) {
-    return <div style={{ color: 'red' }}>Иконка "{name}" не найдена</div>;
+    console.warn(`Иконка "${name}" не найдена.`);
   }
 
-  const iconStyle = {
-    width: `${size}px`,
-    height: `${size}px`,
-    color: color,
-    cursor: onClick ? 'pointer' : 'default',
-    ...style,
-  };
-
-  return <IconComponent style={iconStyle} onClick={onClick} />;
+  return (
+    <span className={classNames(styles.icon, className)}>
+      <IconComponent />;
+    </span>
+    )
 }
 
 export default Icon

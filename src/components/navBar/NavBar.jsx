@@ -1,16 +1,33 @@
 import styles from './navBar.module.css'
-import Button from "../button";
+import { Button } from "@/components";
+
+const NAV_ITEMS = [
+  {
+    id: 'inbox',
+    href: '/',
+    text: 'Входящие',
+    iconName: 'storage',
+    isDark: true
+  }
+]
 
 const NavBar = () => {
 
   return (
     <nav className={styles.navBar}>
-      <ul className={styles.navBar__list}>
-        <li>
-          <Button iconName="storage" href="/" text="Входящие" isDark >
-            Входящие
-          </Button>
-        </li>
+      <ul className={styles.list}>
+        {NAV_ITEMS.map((item, i) => (
+          <li key={item.id}>
+            <Button
+              iconName={item.iconName}
+              href={item.href}
+              text={item.text}
+              isDark={item.isDark}
+            >
+              {item.text}
+            </Button>
+          </li>
+        ))}
       </ul>
     </nav>
   )

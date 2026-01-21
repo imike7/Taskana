@@ -1,8 +1,7 @@
 import styles from './content.module.css'
 
-import NavBar from "../navBar";
-import IncomingTasks from "../../pages/incomingTasks";
-import SideBar from "../sideBar";
+import { NavBar, SideBar } from "@/components"
+import IncomingTasks from "@/pages/incomingTasks";
 
 const Content = () => {
 

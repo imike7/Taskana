@@ -1,9 +1,9 @@
 .sideBar {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 24px;
+  align-self: stretch;
   width: var(--sidebar-width);
   padding: 24px;
   background-color: var(--neutral-light-100);
@@ -12,11 +12,15 @@
   overflow-x: hidden;
 }
 
-.sideBar__inner svg {
-  margin-inline: auto;
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
 }
 
-.sideBar__description {
+.description {
   width: 352px;
   text-align: center;
 }

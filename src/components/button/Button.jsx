@@ -1,6 +1,6 @@
-import Icon from "../icon/icon";
+import Icon from "../icon";
 import styles from './button.module.css'
-import {classNames} from "../../utils";
+import {classNames} from "@/utils";
 
 const Button = (props) => {
   const {
@@ -9,27 +9,25 @@ const Button = (props) => {
     children,
     isDark,
     href,
+    target,
     type = 'button',
     extraAttrs,
   } = props
 
-  const {
-    button,
-    'button--dark': buttonDark,
-    button__text
-  } = styles
-
   const isLink = href !== undefined
   const Component = isLink ? 'a' : 'button'
+  const linkProps = { href, target }
+  const buttonProps = { type }
+  const specificProps = isLink ? linkProps : buttonProps
 
   return (
     <Component
-      className={classNames(className, button, isDark && buttonDark)}
-      type={type}
+      className={classNames(className, styles.button, isDark && styles.dark)}
+      {...specificProps}
       {...extraAttrs}
     >
       <Icon name={iconName}/>
-      <span className={button__text}>
+      <span className={styles.text}>
         {children}
       </span>
     </Component>

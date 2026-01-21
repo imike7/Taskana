@@ -8,7 +8,7 @@
   overflow-y: auto;
 }
 
-.navBar__list {
+.list {
   display: flex;
   flex-direction: column;
   row-gap: 16px;
