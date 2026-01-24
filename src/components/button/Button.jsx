@@ -1,6 +1,6 @@
-import Icon from "../icon";
 import styles from './button.module.css'
 import {classNames} from "@/utils";
+import {Icon} from "@/components";
 
 const Button = (props) => {
   const {
@@ -26,7 +26,7 @@ const Button = (props) => {
       {...specificProps}
       {...extraAttrs}
     >
-      <Icon name={iconName}/>
+      <Icon name={iconName} />
       <span className={styles.text}>
         {children}
       </span>

@@ -8,3 +8,4 @@ export { default as NavBar } from "./navBar";
 export { default as SideBar } from "./sideBar";
 export { default as Statistic } from "./statistic";
 export { default as TaskList } from "./taskList";
+export { default as Icon } from "./icon";

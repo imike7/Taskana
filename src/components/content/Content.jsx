@@ -9,7 +9,7 @@ const Content = () => {
     <div className={styles.content}>
       <NavBar />
       <IncomingTasks />
-      <SideBar className="content"/>
+      <SideBar />
     </div>
   )
 }
