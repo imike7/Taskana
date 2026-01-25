@@ -1,4 +1,4 @@
-.button {
+.base {
   width: 118px;
   display: inline-flex;
   justify-content: start;
@@ -6,10 +6,10 @@
   padding: 8px 16px 8px 12px;
   gap: 8px;
   background-color: var(--primary-440);
-  color: var(--neutral-light-0);
+  color: var(--base-white);
   border: none;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-gray);
   vertical-align: top;
   text-decoration: none;
   overflow: hidden;
@@ -27,8 +27,41 @@
   overflow: hidden;
 }
 
-.dark {
-  background-color: var(--neutral-light-800);
+.button {
+  &:hover {
+    background-color: var(--primary-500);
+    box-shadow: var(--shadow-dark);
+  }
+
+  &:focus-visible {
+    border-radius: var(--border-radius);
+    outline: 4px solid var(--base-white);
+    box-shadow: var(--shadow-dark);
+  }
+
+  &:active {
+    background-color: var(--primary-300);
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    color: rgba(255, 255, 255, 0.50);
+    background-color: rgba(213, 16, 16, 0.50);
+    cursor: not-allowed;
+    box-shadow: var(--shadow-gray);
+  }
+}
+
+.link {
+  background-color: var(--neutral-800);
+  box-shadow: var(--shadow-light);
   padding: 8px;
   width: 172px;
+  color: var(--neutral-0);
+}
+
+.loading {
+  background-color: var(--primary-300);
+  box-shadow: none;
 }

@@ -5,10 +5,15 @@
   height: var(--header-height);
   padding: 12px 24px 12px 16px;
   background-color: var(--base-black);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-light);
   z-index: 2;
 }
 
 .logo {
-  color: var(--neutral-light-0);
+  color: var(--neutral-0);
+}
+
+.actions {
+  display: flex;
+  column-gap: 24px;
 }

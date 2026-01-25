@@ -5,10 +5,10 @@
   height: var(--footer-height);
   padding: 16px 24px;
   text-align: center;
-  background-color: var(--neutral-light-0);
+  background-color: var(--neutral-0);
 }
 
 .footer,
 .footer a {
-  color: var(--neutral-light-600);
+  color: var(--neutral-600);
 }

@@ -1,4 +1,5 @@
 import {classNames} from "@/utils";
+import styles from "./logo.module.css";
 
 const Logo = (props) => {
   const {
@@ -9,7 +10,7 @@ const Logo = (props) => {
 
   return (
     <a
-      className={classNames(className, 'logo')}
+      className={classNames(className, styles.logo)}
       href="#"
       title={title}
       aria-label={title}

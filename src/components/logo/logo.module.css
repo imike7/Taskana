@@ -1,0 +1,8 @@
+.logo {
+  color: var(--base-white);
+  &:focus-visible {
+    outline: 4px solid var(--base-white);
+    outline-offset: 2px;
+    border-radius: var(--border-radius);
+  }
+}

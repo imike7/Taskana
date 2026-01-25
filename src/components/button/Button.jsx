@@ -22,7 +22,7 @@ const Button = (props) => {
 
   return (
     <Component
-      className={classNames(className, styles.button, isDark && styles.dark)}
+      className={classNames(className, styles.base, isDark ? styles.link : styles.button)}
       {...specificProps}
       {...extraAttrs}
     >

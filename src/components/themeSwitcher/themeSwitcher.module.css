@@ -1,0 +1,35 @@
+.themeSwitcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 76px;
+  height: 40px;
+  border-radius: var(--border-radius);
+  background-color: var(--base-800);
+  column-gap: 4px;
+  box-shadow: var(--shadow-gray);
+}
+
+.tabButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--base-600);
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--base-800);
+      background-color: var(--base-white);
+    }
+  }
+}
+
+.active {
+  background-color: var(--primary-400);
+  color: var(--base-white);
+}
