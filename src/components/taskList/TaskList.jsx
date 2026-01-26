@@ -1,5 +1,6 @@
 import styles from './taskList.module.css'
-import taskListImage from '@/assets/icons/well-done.svg'
+import taskListImage from '@/assets/icons/wellDone.svg'
+import Illustration from "@/components/illustration/index.js";
 
 const HEADER = "Все твои задачи организованы как надо"
 const DESCRIPTION = "Отличная работа! Ты большой молодец!"
@@ -12,12 +13,7 @@ const TaskList = () => {
           <h2>{HEADER}</h2>
           <p>{DESCRIPTION}</p>
         </div>
-        <img
-          src={taskListImage}
-          width={463}
-          height={319}
-          alt=""
-        />
+        <Illustration name="wellDone" />
     </div>
   )
 }

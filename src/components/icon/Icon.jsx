@@ -1,15 +1,13 @@
-import Plus from "../icons/plus";
-import Storage from "../icons/storage";
-import { classNames } from "@/utils";
+import { classNames } from "@/utils/index.js";
 import styles from "./icon.module.css";
-import Sun from "@/components/icon/icons/sun/index.js";
-import Moon from "@/components/icon/icons/moon/index.js";
+import { Loading, Moon, Plus, Storage, Sun } from "./icons";
 
 const allIcons = {
   plus: Plus,
   storage: Storage,
   sun: Sun,
-  moon: Moon
+  moon: Moon,
+  loading: Loading
 }
 
 const Icon = (props) => {

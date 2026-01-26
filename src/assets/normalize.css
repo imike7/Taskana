@@ -158,7 +158,7 @@ label {
   (за исключением тех, у которых уже указан
   атрибут fill со значением 'none' или начинается с 'url')
  */
-:where([fill]:not(
+svg:not(.illustration svg) :where([fill]:not(
   [fill="none"],
   [fill^="url"]
 )) {
