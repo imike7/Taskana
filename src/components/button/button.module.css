@@ -1,15 +1,10 @@
 .base {
-  width: 118px;
   display: inline-flex;
   justify-content: start;
   height: 40px;
-  padding: 8px 16px 8px 12px;
   gap: 8px;
-  background-color: var(--primary-440);
-  color: var(--base-white);
   border: none;
   border-radius: var(--border-radius);
-  box-shadow: var(--shadow-gray);
   vertical-align: top;
   text-decoration: none;
   overflow: hidden;
@@ -28,15 +23,27 @@
 }
 
 .button {
+  color: var(--base-white);
+  width: 118px;
+  padding: 8px 16px 8px 12px;
+  background-color: var(--primary-440);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  box-shadow: var(--shadow-default);
+  transition:
+    outline-color var(--transition-duration),
+    background-color var(--transition-duration),
+    box-shadow var(--transition-duration);
+
   &:hover {
     background-color: var(--primary-500);
-    box-shadow: var(--shadow-dark);
+    box-shadow: var(--shadow-hover);
   }
 
   &:focus-visible {
-    border-radius: var(--border-radius);
-    outline: 4px solid var(--base-white);
-    box-shadow: var(--shadow-dark);
+    background-color: var(--primary-500);
+    box-shadow: var(--shadow-hover);
+    outline-color: var(--base-white);
   }
 
   &:active {
@@ -49,16 +56,33 @@
     color: rgba(255, 255, 255, 0.50);
     background-color: rgba(213, 16, 16, 0.50);
     cursor: not-allowed;
-    box-shadow: var(--shadow-gray);
+    box-shadow: var(--shadow-default);
   }
 }
 
 .link {
   background-color: var(--neutral-800);
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-default);
   padding: 8px;
   width: 172px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
   color: var(--neutral-0);
+  transition:
+    outline-color var(--transition-duration),
+    background-color var(--transition-duration),
+    box-shadow var(--transition-duration);
+
+  &:hover {
+    background-color: var(--neutral-700);
+    box-shadow: var(--shadow-hover);
+  }
+
+  &:focus-visible {
+    background-color: var(--neutral-700);
+    outline-color: var(--neutral-900);
+    box-shadow: var(--shadow-hover);
+  }
 }
 
 .loading {

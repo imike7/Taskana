@@ -12,3 +12,21 @@
 .footer a {
   color: var(--neutral-600);
 }
+
+.footer a {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-radius: 4px;
+  transition:
+    color var(--transition-duration),
+    outline-color var(--transition-duration);
+
+  &:hover {
+    color: var(--neutral-800);
+  }
+
+  &:focus-visible {
+    color: var(--neutral-800);
+    outline-color: var(--neutral-900);
+  }
+}

@@ -94,7 +94,7 @@ const ThemeSwitcher = () => {
         <button
           key={theme.id}
           ref={el => buttonRefs.current[index] = el}
-          className={classNames(styles.tabButton, activeTheme === theme.id && styles.active)}
+          className={classNames(styles.tabButtons, activeTheme === theme.id && styles.active)}
           onClick={() => handleButtonClick(theme.id, index)}
           aria-label={`Переключить на ${theme.aria} тему`}
           role="tab"

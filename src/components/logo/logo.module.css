@@ -1,8 +1,12 @@
 .logo {
   color: var(--base-white);
+  outline-offset: 6px;
+  border-radius: var(--border-radius);
+  outline: 2px solid transparent;
+  transition: outline-color var(--transition-duration);
+
+
   &:focus-visible {
-    outline: 4px solid var(--base-white);
-    outline-offset: 2px;
-    border-radius: var(--border-radius);
+    outline-color: var(--base-white);
   }
 }

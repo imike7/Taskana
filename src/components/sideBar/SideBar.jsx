@@ -9,12 +9,6 @@ const SideBar = () => {
   return (
     <aside className={styles.sideBar}>
       <div className={styles.inner}>
-{/*        <img
-          src={SideBarImage}
-          alt=""
-          width={231}
-          height={168}
-        />*/}
         <Illustration name="note" />
         <p className={styles.description}>
           {DESCRIPTION}

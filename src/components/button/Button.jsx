@@ -7,14 +7,13 @@ const Button = (props) => {
     className,
     iconName,
     children,
-    isDark,
+    isLink,
     href,
     target,
     type = 'button',
     extraAttrs,
   } = props
 
-  const isLink = href !== undefined
   const Component = isLink ? 'a' : 'button'
   const linkProps = { href, target }
   const buttonProps = { type }
@@ -22,7 +21,7 @@ const Button = (props) => {
 
   return (
     <Component
-      className={classNames(className, styles.base, isDark ? styles.link : styles.button)}
+      className={classNames(className, styles.base, isLink ? styles.link : styles.button)}
       {...specificProps}
       {...extraAttrs}
     >

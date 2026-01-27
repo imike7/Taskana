@@ -4,10 +4,9 @@ import { Button } from "@/components";
 const NAV_ITEMS = [
   {
     id: 'inbox',
-    href: '/',
+    href: '#',
     text: 'Входящие',
     iconName: 'storage',
-    isDark: true
   }
 ]
 
@@ -22,7 +21,7 @@ const NavBar = () => {
               iconName={item.iconName}
               href={item.href}
               text={item.text}
-              isDark={item.isDark}
+              isLink
             >
               {item.text}
             </Button>

@@ -5,7 +5,7 @@
   height: var(--header-height);
   padding: 12px 24px 12px 16px;
   background-color: var(--base-black);
-  box-shadow: var(--shadow-light);
+  box-shadow: var(--shadow-header);
   z-index: 2;
 }
 
