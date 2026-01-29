@@ -1,5 +1,5 @@
 import styles from './themeSwitcher.module.css'
-import {useEffect, useState, useRef} from "react";
+import {useEffect, useState } from "react";
 import {Icon} from "@/components";
 import {classNames} from "@/utils";
 

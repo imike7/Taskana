@@ -1,5 +1,4 @@
 import styles from './taskList.module.css'
-import taskListImage from '@/assets/icons/wellDone.svg'
 import Illustration from "@/components/illustration/index.js";
 
 const HEADER = "Все твои задачи организованы как надо"

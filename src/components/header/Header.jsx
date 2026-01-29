@@ -8,9 +8,7 @@ const Header = () => {
     <header className={styles.header}>
       <Logo className={styles.logo}/>
       <div className={styles.actions}>
-        <Button iconName="plus">
-          Создать
-        </Button>
+        <Button name="plus" text="Создать" />
         <ThemeSwitcher />
       </div>
     </header>

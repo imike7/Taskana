@@ -1,5 +1,4 @@
 import styles from './sideBar.module.css'
-import SideBarImage from '@/assets/icons/note.svg'
 import Illustration from "@/components/illustration/index.js";
 
 const DESCRIPTION = "Здесь мы поможем тебе управлять твоими задачами, отслеживать статистику и самочувствие."
