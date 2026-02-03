@@ -2,7 +2,7 @@ import { classNames } from "@/utils/index.js";
 import styles from "./icon.module.css";
 import { Loading, Moon, Plus, Storage, Sun } from "./icons";
 
-const allIcons = {
+const icons = {
   plus: Plus,
   storage: Storage,
   sun: Sun,
@@ -12,20 +12,19 @@ const allIcons = {
 
 const Icon = (props) => {
   const {
-    className,
     name,
+    color = 'currentColor',
   } = props
 
-  const IconComponent = allIcons[name]
+  const IconComponent = icons[name]
 
   if (!IconComponent) {
     console.warn(`Иконка "${name}" не найдена.`);
+    return null;
   }
 
   return (
-    <span className={classNames(styles.icon, className)}>
-      <IconComponent />
-    </span>
+      <IconComponent color={color} />
     )
 }
 

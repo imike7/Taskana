@@ -16,9 +16,8 @@
       <nav className={styles.navBar}>
         <ul className={styles.list}>
           {NAV_ITEMS.map((item) => (
-            <li>
+            <li key={item.id}>
               <Button
-                key={item.id}
                 {...item}
                 isLink
               />

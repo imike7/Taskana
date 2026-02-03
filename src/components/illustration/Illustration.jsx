@@ -1,5 +1,6 @@
 import {classNames} from "@/utils/index.js";
 import { Note, WellDone } from "./illustrations"
+import styles from "./lllustration.module.css"
 
 const allImages = {
   wellDone: WellDone,
@@ -16,10 +17,11 @@ const Illustration = (props) => {
 
   if (!ImageComponent) {
     console.warn(`Изображение "${name}" не найдено.`);
+    return null;
   }
 
   return (
-    <span className={classNames(className, 'illustration')}>
+    <span className={classNames(styles.illustration, className)}>
       <ImageComponent />
     </span>
   )

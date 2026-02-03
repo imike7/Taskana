@@ -5,7 +5,7 @@ import {classNames} from "@/utils";
 
 const ThemeSwitcher = () => {
 
-  const [activeTheme, setActiveTheme] = useState("light");
+/*  const [activeTheme, setActiveTheme] = useState("light");
   const [activeIndex, setActiveIndex] = useState(0);
 
   const themes = [
@@ -85,6 +85,33 @@ const ThemeSwitcher = () => {
         </button>
       ))}
     </div>
+  )*/
+  const [ theme, setTheme ] = useState('light');
+
+  const toggleTheme = () => {
+    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+  };
+
+  const isLight = theme === 'light';
+
+  return (
+    <button
+      className={classNames(styles.themeSwitcherWrapper)}
+      type="button"
+      onClick={toggleTheme}
+      aria-label='Переключить тему'
+      role="tab"
+    >
+      <span className={classNames(styles.themeSwitcher, isLight && styles.active)}>
+        <Icon name="sun" />
+      </span>
+      <span className={classNames(styles.themeSwitcher, !isLight && styles.active)}>
+        <Icon name="moon" />
+      </span>
+      {/*<div className={classNames(styles.thumb, isLight ? styles.left : styles.dark)}>
+        <Icon name={isLight ? 'sun' : 'moon'} />
+      </div>*/}
+    </button>
   )
 }
 
