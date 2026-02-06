@@ -5,28 +5,29 @@
   height: var(--footer-height);
   padding: 16px 24px;
   text-align: center;
-  background-color: var(--neutral-0);
-}
-
-.footer,
-.footer a {
   color: var(--neutral-600);
-}
-
-.footer a {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  border-radius: var(--border-radius-small);
+  background-color: var(--neutral-0);
   transition:
-    color var(--transition-duration),
-    outline-color var(--transition-duration);
+    background-color var(--transition-duration),
+    color var(--transition-duration);
 
-  &:hover {
-    color: var(--neutral-800);
-  }
+  a {
+    color: var(--neutral-600);
+    border-radius: var(--border-radius-small);
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition:
+      color var(--transition-duration),
+      outline-color var(--transition-duration);
 
-  &:focus-visible {
-    color: var(--neutral-800);
-    outline-color: var(--neutral-900);
+    &:hover,
+    &:focus-visible {
+      color: var(--neutral-800);
+    }
+
+    &:focus-visible {
+      outline-color: var(--neutral-900);
+    }
   }
 }
+

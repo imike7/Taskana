@@ -1,50 +1,26 @@
 import styles from './button.module.css'
 import {classNames} from "@/utils";
 import {Icon} from "@/components";
-import {useState} from "react";
 
 const Button = (props) => {
   const {
     className = '',
-    isLink,
     href,
     target,
     type = 'button',
-    extraAttrs,
+    isDisabled = false,
+    isLoading = false,
     onClick,
     text,
     name = '',
+    extraAttrs,
   } = props
 
-  const [isLoading, setIsLoading] = useState(false);
-
+  const isLink = Boolean(href)
   const Component = isLink ? 'a' : 'button'
   const linkProps = { href, target }
-  const buttonProps = { type }
+  const buttonProps = { type, disabled: isDisabled || isLoading}
   const specificProps = isLink ? linkProps : buttonProps
-
-  const handleClick = async (event) => {
-    if (isLink || isLoading) {
-      onClick?.(event);
-      return;
-    }
-
-    setIsLoading(true);
-
-    try {
-      const minDelay = new Promise(resolve => setTimeout(resolve, 1500));
-
-      if (onClick) {
-        const clickResult = onClick(event);
-        const clickPromise = Promise.resolve(clickResult);
-        await Promise.all([clickPromise, minDelay]);
-      } else {
-        await minDelay;
-      }
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   return (
     <Component
@@ -52,7 +28,7 @@ const Button = (props) => {
       {...specificProps}
       {...extraAttrs}
       disabled={!isLink && isLoading}
-      onClick={handleClick}
+      onClick={onClick}
     >
       {!isLink && isLoading ? (
         <div className={styles.spinnerWrapper}>

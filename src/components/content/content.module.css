@@ -3,9 +3,9 @@
   align-items: flex-start;
   flex: 1 0 0;
   align-self: stretch;
-  height: calc(100vh - var(--header-height));
-}
+  height: calc(100dvh - var(--header-height));
 
-.content > * {
-  height: 100%;
+  & > * {
+    height: 100%;
+  }
 }

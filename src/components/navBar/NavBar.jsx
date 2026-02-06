@@ -19,7 +19,6 @@
             <li key={item.id}>
               <Button
                 {...item}
-                isLink
               />
             </li>
           ))}

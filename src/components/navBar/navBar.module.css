@@ -6,6 +6,9 @@
   background-color: var(--neutral-100);
   border-right: var(--border);
   overflow-y: auto;
+  transition:
+    background-color var(--transition-duration),
+    border-color var(--transition-duration);
 }
 
 .list {

@@ -31,6 +31,8 @@
   --shadow-default: 2px 2px 4px 0 rgba(0, 0, 0, 0.20);
   --shadow-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.25);
 
+  --shadow-dark-base-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.80);
+
   --border: 1px solid var(--neutral-300);
   --border-radius: 8px;
   --border-radius-small: 4px;
