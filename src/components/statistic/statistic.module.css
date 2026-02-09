@@ -1,0 +1,12 @@
+.statisticEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+
+  & p {
+    width: 352px;
+    text-align: center;
+  }
+}

@@ -6,7 +6,7 @@
       id: '1',
       href: '#',
       text: 'Входящие',
-      name: 'storage',
+      iconName: 'storage',
     }
   ]
 

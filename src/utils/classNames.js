@@ -2,7 +2,8 @@ export const classNames = (...args) => {
   const classes = [];
 
   args.forEach(arg => {
-    if (!arg) return;
+    if (!arg)
+      return;
 
     if (typeof arg === 'string') {
       classes.push(arg);

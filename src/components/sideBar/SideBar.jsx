@@ -1,18 +1,11 @@
-import styles from './sideBar.module.css'
-import Illustration from "@/components/illustration/index.js";
-
-const DESCRIPTION = "Здесь мы поможем тебе управлять твоими задачами, отслеживать статистику и самочувствие."
+import Statistic from "@/components/statistic";
+import styles from "./sideBar.module.css";
 
 const SideBar = () => {
 
   return (
-    <aside className={styles.sideBar}>
-      <div className={styles.inner}>
-        <Illustration name="note" />
-        <p className={styles.description}>
-          {DESCRIPTION}
-        </p>
-      </div>
+    <aside className={styles.sideBar} aria-label="Статистика">
+      <Statistic statisticData={[]}/>
     </aside>
   )
 }

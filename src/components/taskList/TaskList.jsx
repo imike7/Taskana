@@ -1,5 +1,5 @@
 import styles from './taskList.module.css'
-import Illustration from "@/components/illustration/index.js";
+import Illustration from "@/components/illustration";
 
 const TaskList = () => {
 

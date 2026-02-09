@@ -1,24 +1,18 @@
 import styles from './themeSwitcher.module.css'
-import { useState } from "react";
 import {Icon} from "@/components";
 import {classNames} from "@/utils";
-import {THEME} from "@/constants/theme.js";
+import {THEME} from "@/constants/theme";
+import {useTheme} from "@/layouts/themeContext/ThemeContext";
 
 const ThemeSwitcher = () => {
 
-  const [ theme, setTheme ] = useState(THEME.LIGHT);
-
-  const handleTheme = () => {
-    const nextTheme = theme === THEME.LIGHT ? THEME.DARK : THEME.LIGHT;
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    setTheme(nextTheme);
-  };
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <button
       className={classNames(styles.themeSwitcher)}
       type="button"
-      onClick={handleTheme}
+      onClick={toggleTheme}
       aria-label='Переключить тему'
       role="tab"
     >

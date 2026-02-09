@@ -1,4 +1,4 @@
-import {classNames} from "@/utils/index.js";
+import {classNames} from "@/utils";
 import { Note, WellDone } from "./illustrations"
 import styles from "./lllustration.module.css"
 

@@ -1,5 +1,3 @@
-import { classNames } from "@/utils/index.js";
-import styles from "./icon.module.css";
 import { Loading, Moon, Plus, Storage, Sun } from "./icons";
 
 const icons = {

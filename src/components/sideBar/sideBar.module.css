@@ -6,7 +6,7 @@
   align-self: stretch;
   width: var(--sidebar-width);
   padding: 24px;
-  background-color: var(--neutral-100);
+  background-color: var(--color-neutral-100);
   border-left: var(--border);
   overflow-y: auto;
   overflow-x: hidden;
@@ -14,17 +14,4 @@
     color var(--transition-duration),
     background-color var(--transition-duration),
     border-color var(--transition-duration);
-}
-
-.inner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-}
-
-.description {
-  width: 352px;
-  text-align: center;
 }

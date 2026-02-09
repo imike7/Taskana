@@ -1,82 +1,70 @@
 .themeSwitcher {
+  --button-size: 32px;
+  --padding: 4px;
+
   position: relative;
   display: flex;
-  column-gap: 4px;
+  gap: var(--padding);
   align-items: center;
   width: 76px;
   height: 40px;
+  padding: var(--padding);
   border-radius: var(--border-radius);
-  color: var(--base-600);
-  background-color: var(--base-800);
+  background-color: var(--color-base-800);
+  color: var(--color-base-600);
   box-shadow: var(--shadow-header-actions);
-  outline-offset: 2px;
   outline: 2px solid transparent;
-  padding: 4px;
-  transition:
-    box-shadow var(--transition-duration),
-    outline-color var(--transition-duration);
+  outline-offset: 2px;
+  transition: box-shadow var(--transition-duration), outline-color var(--transition-duration);
 
   &:hover {
     box-shadow: var(--shadow-dark-base-hover);
   }
 
   &:focus-visible {
-    outline-color: var(--base-white);
+    outline-color: var(--color-base-white);
   }
 
   &::before {
     content: '';
     position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 32px;
-    height: 32px;
-    background-color: var(--primary-400);
+    top: var(--padding);
+    left: var(--padding);
+    width: var(--button-size);
+    height: var(--button-size);
+    background-color: var(--color-primary-400);
     border-radius: var(--border-radius-small);
-    transition:
-      transform var(--transition-duration),
-      background-color var(--transition-duration);
+    transition: transform var(--transition-duration), background-color var(--transition-duration);
   }
 
   &:hover::before {
-    background-color: var(--base-white);
-  }
-
-  &:hover .active,
-  &:focus-visible .active {
-    color: var(--base-black);
-  }
-
-  &:hover:has(.active)::before,
-  &:focus-visible:has(.active)::before {
-    background-color: var(--base-white);
+    background-color: var(--color-base-white);
   }
 }
 
 [data-theme="dark"] .themeSwitcher::before {
-  transform: translateX(36px);
+  transform: translateX(calc(100% + var(--padding)));
 }
 
 .button {
-  z-index: 50;
-  width: 32px;
-  height: 32px;
-  color: var(--base-600);
-  padding: 4px;
-  background-color: transparent;
-  border: none;
+  position: relative;
+  z-index: 1;
+  width: var(--button-size);
+  height: var(--button-size);
+  padding: var(--padding);
   border-radius: var(--border-radius-small);
+  background: transparent;
+  color: var(--color-base-600);
   outline: 2px solid transparent;
-  transition:
-    color var(--transition-duration),
-    background-color var(--transition-duration),
-    outline-color var(--transition-duration);
+  transition: color var(--transition-duration), box-shadow var(--transition-duration);
 }
 
 .active {
-  color: var(--base-white);
+  color: var(--color-base-white);
   box-shadow: var(--shadow-header-actions);
-  transition:
-    color var(--transition-duration),
-    box-shadow var(--transition-duration);
+}
+
+.themeSwitcher:hover .button.active,
+.themeSwitcher:focus-visible .button.active {
+  color: var(--color-base-black);
 }

@@ -3,7 +3,7 @@
   flex-direction: column;
   width: var(--nav-width);
   padding: 24px 16px;
-  background-color: var(--neutral-100);
+  background-color: var(--color-neutral-100);
   border-right: var(--border);
   overflow-y: auto;
   transition:

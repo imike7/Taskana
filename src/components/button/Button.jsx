@@ -12,7 +12,7 @@ const Button = (props) => {
     isLoading = false,
     onClick,
     text,
-    name = '',
+    iconName = '',
     extraAttrs,
   } = props
 
@@ -36,7 +36,7 @@ const Button = (props) => {
         </div>
       ) : (
         <>
-          <Icon name={name} />
+          <Icon name={iconName} />
           <span className={styles.text}>
             {text}
           </span>

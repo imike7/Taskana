@@ -5,14 +5,14 @@
   height: var(--footer-height);
   padding: 16px 24px;
   text-align: center;
-  color: var(--neutral-600);
-  background-color: var(--neutral-0);
+  color: var(--color-neutral-600);
+  background-color: var(--color-neutral-0);
   transition:
     background-color var(--transition-duration),
     color var(--transition-duration);
 
   a {
-    color: var(--neutral-600);
+    color: var(--color-neutral-600);
     border-radius: var(--border-radius-small);
     outline: 2px solid transparent;
     outline-offset: 2px;
@@ -22,11 +22,11 @@
 
     &:hover,
     &:focus-visible {
-      color: var(--neutral-800);
+      color: var(--color-neutral-800);
     }
 
     &:focus-visible {
-      outline-color: var(--neutral-900);
+      outline-color: var(--color-neutral-900);
     }
   }
 }

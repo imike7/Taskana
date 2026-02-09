@@ -4,13 +4,13 @@
   justify-content: space-between;
   height: var(--header-height);
   padding: 12px 24px 12px 16px;
-  background-color: var(--base-black);
+  background-color: var(--color-base-black);
   box-shadow: var(--shadow-header);
   z-index: var(--layer-header);
 }
 
 .logo {
-  color: var(--neutral-0);
+  color: var(--color-neutral-0);
 }
 
 .actions {

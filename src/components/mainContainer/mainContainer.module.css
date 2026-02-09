@@ -18,7 +18,7 @@
   top: 0;
   height: 88px;
   padding: 24px;
-  background-color: var(--neutral-0);
+  background-color: var(--color-neutral-0);
   text-align: left;
   transition:
     background-color var(--transition-duration),
