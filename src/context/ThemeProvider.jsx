@@ -1,4 +1,4 @@
-import {DATA_THEME_ATTRIBUTE, THEME} from "@/constants/theme.js";
+import {DATA_THEME_ATTRIBUTE, THEME} from "@/constants/theme";
 import {useEffect, useState} from "react";
 import ThemeContext from "./ThemeContext";
 

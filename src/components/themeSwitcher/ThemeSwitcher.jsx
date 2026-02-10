@@ -2,7 +2,7 @@ import styles from './themeSwitcher.module.css'
 import {Icon} from "@/components";
 import {classNames} from "@/utils";
 import {THEME} from "@/constants/theme";
-import {useTheme} from "@/layouts/themeContext/ThemeContext";
+import {useTheme} from "@/context/ThemeContext";
 
 const ThemeSwitcher = () => {
 

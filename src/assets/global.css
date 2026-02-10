@@ -11,6 +11,7 @@ body {
   min-height: 100dvh;
   min-width: var(--min-viewport-width);
   transition: background-color var(--transition-duration);
+  overflow-y: hidden;
 }
 
 h1 {

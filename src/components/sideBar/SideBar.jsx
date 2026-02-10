@@ -1,4 +1,4 @@
-import Statistic from "@/components/statistic";
+import {Statistic} from "@/components";
 import styles from "./sideBar.module.css";
 
 const SideBar = () => {

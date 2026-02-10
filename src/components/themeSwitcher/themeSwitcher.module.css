@@ -15,7 +15,9 @@
   box-shadow: var(--shadow-header-actions);
   outline: 2px solid transparent;
   outline-offset: 2px;
-  transition: box-shadow var(--transition-duration), outline-color var(--transition-duration);
+  transition:
+    box-shadow var(--transition-duration),
+    outline-color var(--transition-duration);
 
   &:hover {
     box-shadow: var(--shadow-dark-base-hover);
@@ -34,10 +36,14 @@
     height: var(--button-size);
     background-color: var(--color-primary-400);
     border-radius: var(--border-radius-small);
-    transition: transform var(--transition-duration), background-color var(--transition-duration);
+    box-shadow: var(--shadow-header-actions);
+    transition:
+      transform var(--transition-duration),
+      background-color var(--transition-duration);
   }
 
-  &:hover::before {
+  &:hover::before,
+  &:focus-visible::before {
     background-color: var(--color-base-white);
   }
 }
@@ -56,12 +62,13 @@
   background: transparent;
   color: var(--color-base-600);
   outline: 2px solid transparent;
-  transition: color var(--transition-duration), box-shadow var(--transition-duration);
+  transition:
+    color var(--transition-duration),
+    box-shadow var(--transition-duration);
 }
 
 .active {
   color: var(--color-base-white);
-  box-shadow: var(--shadow-header-actions);
 }
 
 .themeSwitcher:hover .button.active,

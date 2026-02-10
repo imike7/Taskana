@@ -9,3 +9,7 @@ export { default as SideBar } from "./sideBar";
 export { default as TaskList } from "./taskList";
 export { default as Icon } from "./icon";
 export { default as ThemeSwitcher } from "./themeSwitcher";
+export { default as Statistic } from "./statistic";
+export { default as Illustration } from "./illustration";
+
+

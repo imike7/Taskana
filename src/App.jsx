@@ -1,4 +1,4 @@
-import ThemeContextProvider from '@/layouts/themeContext/ThemeProvider';
+import ThemeContextProvider from '@/context/ThemeProvider';
 import IncomingTasks from '@/pages/incomingTasks';
 import AppLayout from "./layouts/appLayout";
 

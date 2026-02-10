@@ -1,5 +1,5 @@
 import styles from "./statistic.module.css";
-import Illustration from "@/components/illustration";
+import {Illustration} from "@/components";
 
 const Statistic = (props) => {
   const {
@@ -11,7 +11,7 @@ const Statistic = (props) => {
       <div className={styles.statisticEmpty}>
         <Illustration name="note" />
         <p>
-          Здесь мы поможем тебе управлять твоими задачами, отслеживать статистику и самочувствие.
+          Здесь мы&nbsp;поможем тебе управлять твоими задачами, отслеживать статистику и&nbsp;самочувствие.
         </p>
       </div>
     )
