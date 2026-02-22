@@ -1,14 +1,17 @@
-import ThemeContextProvider from '@/context/ThemeProvider';
+import ThemeProvider from '@/providers/ThemeProvider.jsx';
 import IncomingTasks from '@/pages/incomingTasks';
 import AppLayout from "./layouts/appLayout";
+import TaskProvider from "@/providers/TaskProvider.jsx";
 
 
 export const App = () => {
   return (
-    <ThemeContextProvider>
-      <AppLayout>
-        <IncomingTasks />
-      </AppLayout>
-    </ThemeContextProvider>
+    <ThemeProvider>
+      <TaskProvider>
+        <AppLayout>
+          <IncomingTasks />
+        </AppLayout>
+      </TaskProvider>
+    </ThemeProvider>
   );
 };

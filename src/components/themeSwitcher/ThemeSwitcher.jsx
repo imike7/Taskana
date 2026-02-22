@@ -1,8 +1,8 @@
-import styles from './themeSwitcher.module.css'
+import { useTheme } from "@/hooks/useTheme.js";
 import {Icon} from "@/components";
 import {classNames} from "@/utils";
 import {THEME} from "@/constants/theme";
-import {useTheme} from "@/context/ThemeContext";
+import styles from './themeSwitcher.module.css'
 
 const ThemeSwitcher = () => {
 

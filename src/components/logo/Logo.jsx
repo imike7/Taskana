@@ -1,6 +1,6 @@
 import {classNames} from "@/utils";
-import styles from "./logo.module.css";
 import {Icon} from "@/components";
+import styles from "./logo.module.css";
 
 const Logo = (props) => {
   const {

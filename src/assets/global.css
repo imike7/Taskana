@@ -14,7 +14,8 @@ body {
   overflow-y: hidden;
 }
 
-h1 {
+h1,
+.h1 {
   font-weight: 700;
   font-size: 32px;
   line-height: 1.25;
@@ -31,7 +32,7 @@ h2 {
 h3 {
   font-weight: 700;
   font-size: 18px;
-  line-height: calc(4 /3);
+  line-height: calc(4 / 3);
 }
 
 svg,

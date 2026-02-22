@@ -1,4 +1,18 @@
-import { Loading, Moon, Plus, Storage, Sun, Logo } from "./icons";
+import {
+  Loading,
+  Moon,
+  Plus,
+  Storage,
+  Sun,
+  Logo,
+  Edit,
+  Check,
+  XMark,
+  ChevronBottom,
+  ArrowTwo,
+  ChevronTop,
+  Minus,
+} from "./icons";
 
 const icons = {
   plus: Plus,
@@ -7,6 +21,13 @@ const icons = {
   moon: Moon,
   loading: Loading,
   logo: Logo,
+  edit: Edit,
+  check: Check,
+  xMark: XMark,
+  chevronBottom: ChevronBottom,
+  arrowTwo: ArrowTwo,
+  chevronTop: ChevronTop,
+  minus: Minus,
 }
 
 const Icon = (props) => {

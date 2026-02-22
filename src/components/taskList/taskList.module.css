@@ -1,4 +1,4 @@
-.taskList {
+.emptyList {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,5 +24,10 @@
     font-size: 18px;
     line-height: calc(4 / 3);
   }
+}
+
+.list {
+  display: grid;
+  row-gap: 16px;
 }
 

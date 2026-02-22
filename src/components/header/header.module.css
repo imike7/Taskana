@@ -9,10 +9,6 @@
   z-index: var(--layer-header);
 }
 
-.logo {
-  color: var(--color-neutral-0);
-}
-
 .actions {
   display: flex;
   column-gap: 24px;

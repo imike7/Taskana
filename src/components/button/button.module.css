@@ -1,29 +1,28 @@
 .base {
   display: inline-flex;
   justify-content: start;
-  vertical-align: top;
-  gap: 8px;
-  height: 40px;
+  /*vertical-align: top;*/
   border-radius: var(--border-radius);
-  text-decoration: none;
+  /*text-decoration: none;*/
   overflow: hidden;
 }
 
-.text {
-  display: block;
-  vertical-align: top;
-  text-align: start;
-  font-weight: 600;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  text-overflow: ellipsis;
-  overflow: hidden;
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+
+  svg {
+    animation: rotate 1s linear infinite;
+  }
 }
 
-.button {
+.accentButton {
   padding: 8px 16px 8px 12px;
   width: 118px;
+  height: 40px;
+  gap: 8px;
   color: var(--color-base-white);
   background-color: var(--color-primary-440);
   outline: 2px solid transparent;
@@ -34,20 +33,22 @@
     background-color var(--transition-duration),
     box-shadow var(--transition-duration);
 
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not(:active):not(.loading) {
     background-color: var(--color-primary-500);
     box-shadow: var(--shadow-hover);
   }
 
-  &:focus-visible {
+  &:focus-visible:not(:disabled):not(:active):not(.loading) {
     background-color: var(--color-primary-500);
     box-shadow: var(--shadow-hover);
     outline-color: var(--color-base-white);
   }
 
-  &:active:not(:disabled) {
+  &:active:not(:disabled),
+  &.loading {
     background-color: var(--color-primary-300);
     box-shadow: none;
+    /*pointer-events: none;*/
   }
 
   &:disabled,
@@ -59,49 +60,14 @@
   }
 }
 
-.link {
-  background-color: var(--color-neutral-800);
-  box-shadow: var(--shadow-default);
-  padding: 8px;
-  width: 172px;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+.submitButton:disabled {
   color: var(--color-neutral-0);
-  transition:
-    color var(--transition-duration),
-    outline-color var(--transition-duration),
-    background-color var(--transition-duration),
-    box-shadow var(--transition-duration);
-
-  &:hover {
-    background-color: var(--color-neutral-700);
-    box-shadow: var(--shadow-hover);
-  }
-
-  &:focus-visible {
-    background-color: var(--color-neutral-700);
-    outline-color: var(--color-neutral-900);
-    box-shadow: var(--shadow-hover);
-  }
+  background-color: var(--color-neutral-600);
 }
 
-.loading {
-  padding: 0;
-}
-
-.spinnerWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color-primary-300);
-  box-shadow: none;
-  width: 100%;
-  height: 100%;
-  color: var(--color-base-white);
-
-  svg {
-    animation: rotate 1s linear infinite;
-  }
+.cancelButton:disabled {
+  color: var(--color-neutral-800);
+  background-color: var(--color-neutral-100);
 }
 
 @keyframes rotate {
@@ -110,5 +76,85 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.submitButton,
+.cancelButton {
+  padding: 12px 16px;
+  height: 48px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: calc(4 / 3);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition:
+    outline-color var(--transition-duration),
+    background-color var(--transition-duration),
+    box-shadow var(--transition-duration),
+    color var(--transition-duration);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-neutral-900);
+  }
+}
+
+.submitButton {
+  width: 98px;
+  color: var(--color-neutral-0);
+  background-color: var(--color-neutral-800);
+  box-shadow: var(--shadow-default);
+
+  &:hover:not(:disabled):not(:active):not(.loading) {
+    background-color: var(--color-neutral-700);
+    box-shadow: var(--shadow-hover);
+  }
+
+  &:focus-visible:not(:disabled):not(:active):not(.loading) {
+    background-color: var(--color-neutral-700);
+  }
+
+  &:active:not(:disabled),
+  &.loading {
+    background-color: var(--color-neutral-600);
+    box-shadow: none;
+    /*pointer-events: none;*/
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    background-color: rgba(28, 28, 28, 0.50);
+    cursor: not-allowed;
+    color: rgba(255, 255, 255, 0.50);
+  }
+}
+
+.cancelButton {
+  width: 94px;
+  color: var(--color-neutral-800);
+  background-color: var(--color-neutral-200);
+  box-shadow: var(--shadow-priority-active);
+
+  &:hover:not(:disabled):not(:active):not(.loading) {
+    background-color: var(--color-neutral-300);
+    box-shadow: var(--shadow-priority-hover);
+  }
+
+  &:focus-visible:not(:disabled):not(:active):not(.loading) {
+    background-color: var(--color-neutral-300);
+  }
+
+  &:active:not(:disabled),
+  &.loading {
+    background-color: var(--color-neutral-100);
+    box-shadow: none;
+    /*pointer-events: none;*/
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    background-color: rgba(243, 243, 243, 0.50);
+    cursor: not-allowed;
+    color: rgba(28, 28, 28, 0.50);
   }
 }

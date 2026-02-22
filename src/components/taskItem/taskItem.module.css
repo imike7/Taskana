@@ -1,0 +1,30 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  column-gap: 16px;
+  padding: 8px 8px 8px 16px;
+  width: 100%;
+  height: 56px;
+  outline-offset: 2px;
+  outline: 2px solid transparent;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-duration);
+  z-index: 222;
+
+  &:hover {
+    background-color: var(--color-neutral-100);
+    box-shadow: var(--shadow-priority-active);
+  }
+
+  &:focus-visible {
+    background-color: var(--color-neutral-0);
+    outline-color: var(--color-neutral-900);
+    /*border-radius: var(--border-radius);*/
+  }
+}
+
+.text {
+  font-size: 18px;
+  line-height: calc(4 / 3);
+}

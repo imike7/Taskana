@@ -1,5 +1,5 @@
-import styles from "./statistic.module.css";
 import {Illustration} from "@/components";
+import styles from "./statistic.module.css";
 
 const Statistic = (props) => {
   const {

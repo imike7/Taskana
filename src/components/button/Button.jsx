@@ -1,48 +1,49 @@
-import styles from './button.module.css'
 import {classNames} from "@/utils";
 import {Icon} from "@/components";
+import styles from './button.module.css'
 
 const Button = (props) => {
+
   const {
     className = '',
-    href,
-    target,
     type = 'button',
     isDisabled = false,
     isLoading = false,
     onClick,
     text,
+    submitButton,
+    cancelButton,
+    accentButton,
     iconName = '',
     extraAttrs,
   } = props
 
-  const isLink = Boolean(href)
-  const Component = isLink ? 'a' : 'button'
-  const linkProps = { href, target }
-  const buttonProps = { type, disabled: isDisabled || isLoading}
-  const specificProps = isLink ? linkProps : buttonProps
-
   return (
-    <Component
-      className={classNames(className, styles.base, isLink ? styles.link : styles.button, !isLink && isLoading && styles.loading)}
-      {...specificProps}
-      {...extraAttrs}
-      disabled={!isLink && isLoading}
+    <button
+      className={classNames(
+        className,
+        styles.base,
+        isLoading && styles.loading,
+        accentButton && styles.accentButton,
+        submitButton && styles.submitButton,
+        cancelButton && styles.cancelButton,
+      )}
+      type={type}
+      disabled={isDisabled}
       onClick={onClick}
+      {...extraAttrs}
     >
-      {!isLink && isLoading ? (
-        <div className={styles.spinnerWrapper}>
+      {isLoading ? (
           <Icon name="loading" />
-        </div>
       ) : (
         <>
-          <Icon name={iconName} />
-          <span className={styles.text}>
+          {iconName && <Icon name={iconName} />}
+          <span>
             {text}
           </span>
         </>
         )}
-    </Component>
+    </button>
 
   )
 }

@@ -1,5 +1,5 @@
+  import { NavBarLink } from "@/components";
   import styles from './navBar.module.css'
-  import { Button } from "@/components";
 
   const NAV_ITEMS = [
     {
@@ -17,7 +17,7 @@
         <ul className={styles.list}>
           {NAV_ITEMS.map((item) => (
             <li key={item.id}>
-              <Button
+              <NavBarLink
                 {...item}
               />
             </li>

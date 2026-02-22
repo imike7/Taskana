@@ -148,8 +148,7 @@ a:where([class]) {
 /**
   Курсор-рука при наведении на элемент
  */
-button,
-label {
+button {
   cursor: pointer;
 }
 
