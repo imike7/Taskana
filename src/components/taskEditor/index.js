@@ -1,3 +1,3 @@
-import taskEditor from './TaskEditor.jsx'
+import TaskEditor from './TaskEditor';
 
-export default taskEditor
+export default TaskEditor;

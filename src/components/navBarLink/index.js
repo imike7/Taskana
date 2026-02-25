@@ -1,3 +1,3 @@
-import NavBarLink from './NavBarLink'
+import NavBarLink from './NavBarLink';
 
-export default NavBarLink
+export default NavBarLink;

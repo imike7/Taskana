@@ -1,32 +1,31 @@
-import {classNames} from "@/utils";
-import {PRIORITIES} from "@/constants/priorities";
+import { Icon } from '@/components';
+import { classNames } from '@/utils';
+import { PRIORITIES } from '@/constants';
 import styles from './priorityIcon.module.css';
-import {Icon} from "@/components";
 
 const PriorityIcon = (props) => {
   const {
     priority,
     onChange,
-    checked = false,
-    disabled = false,
-    handleToggleComplete,
-  } = props
+    isChecked = false,
+    disabled: isDisabled = false,
+  } = props;
 
   const priorityName = PRIORITIES[priority];
 
   const handleChange = (e) => {
-    if (onChange && !disabled) {
+    if (onChange && !isDisabled) {
       onChange(e);
     }
-  }
+  };
 
   return (
     <label className={styles.container}>
       <input
         className={classNames(styles.hiddenCheckbox, styles[PRIORITIES[priority]])}
         type="checkbox"
-        checked={checked}
-        disabled={disabled}
+        checked={isChecked}
+        disabled={isDisabled}
         onChange={handleChange}
         tabIndex={-1}
       />
@@ -34,15 +33,14 @@ const PriorityIcon = (props) => {
         className={classNames(
           styles.customCheckbox,
           styles[priorityName],
-          checked && styles.checked,
-          disabled && styles.disabled
+          isDisabled && styles.disabled
         )}
         tabIndex={0}
       >
-         {checked && <Icon name="check" className={styles.icon} />}
+         {isChecked && <Icon name="check" className={styles.icon} />}
       </span>
     </label>
-  )
-}
+  );
+};
 
-export default PriorityIcon
+export default PriorityIcon;

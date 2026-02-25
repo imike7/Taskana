@@ -1,2 +1,2 @@
-export {default as TaskContext } from "./TaskContext";
-export {default as ThemeContext} from "./ThemeContext";
+export { TaskContext } from './TaskContext';
+export { ThemeContext } from './ThemeContext';

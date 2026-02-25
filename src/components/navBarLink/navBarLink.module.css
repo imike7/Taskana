@@ -2,7 +2,7 @@
   display: inline-flex;
   justify-content: start;
   vertical-align: top;
-  gap: 8px;
+  gap: var(--button-gap);
   height: 40px;
   border-radius: var(--border-radius);
   text-decoration: none;

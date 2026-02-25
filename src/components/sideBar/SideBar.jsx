@@ -1,5 +1,5 @@
-import {Statistic} from "@/components";
-import styles from "./sideBar.module.css";
+import { Statistic } from '@/components';
+import styles from './sideBar.module.css';
 
 const SideBar = () => {
 
@@ -7,7 +7,7 @@ const SideBar = () => {
     <aside className={styles.sideBar} aria-label="Статистика">
       <Statistic statisticData={[]}/>
     </aside>
-  )
-}
+  );
+};
 
-export default SideBar
+export default SideBar;

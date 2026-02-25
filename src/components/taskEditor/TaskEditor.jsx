@@ -1,12 +1,7 @@
+import { useEffect, useRef, useState } from 'react';
+import { Button, Input, PriorityButton } from '@/components';
+import { classNames } from '@/utils';
 import styles from './taskEditor.module.css';
-import {Button, Input, PriorityButton} from "@/components";
-import {useEffect, useRef, useState} from "react";
-import {PRIORITIES} from "@/constants/priorities";
-import {classNames} from "@/utils";
-
-const EDITOR_TYPES = {
-  CREATE: 'create',
-}
 
 const priorityButtons = [
   {
@@ -21,27 +16,18 @@ const priorityButtons = [
     iconName: 'arrowTwo',
     priority: 3,
   }
-]
-
+];
 
 const TaskEditor = (props) => {
   const {
-    type,
-    editingTask,
-    setEditingTask,
-    isEditorOpen,
-    setIsEditorOpen,
     onCreate,
-    onEdit,
-    onDelete,
-    value,
     isOpen,
     onCloseEditor,
-  } = props
+  } = props;
 
   const [inputValue, setInputValue] = useState("");
   const [currentPriority, setCurrentPriority] = useState(1);
-
+  const prevIsOpenRef = useRef(isOpen);
   const inputRef = useRef(null);
 
   useEffect(() => {
@@ -50,13 +36,14 @@ const TaskEditor = (props) => {
         inputRef.current.focus();
       }, 400);
     }
-  })
+  }, [isOpen]);
 
   useEffect(() => {
-    if (!isOpen) {
+    if (prevIsOpenRef.current === true && isOpen === false) {
       setInputValue("");
       setCurrentPriority(1);
     }
+    prevIsOpenRef.current = isOpen;
   }, [isOpen]);
 
   const handleInputChange = (value) => {
@@ -72,17 +59,17 @@ const TaskEditor = (props) => {
     if (isInputValid() && onCreate) {
       onCreate(inputValue, currentPriority);
     }
-  }
+  };
 
   const isInputValid = () => {
     return inputValue.trim() !== '';
-  }
+  };
 
   return (
     <div className={classNames(styles.taskEditor, isOpen && styles.open)}>
       <form onSubmit={handleSubmit}>
         <div className={styles.creation}>
-          <header className="h1">Создание задачи</header>
+          <h2>Создание задачи</h2>
           <Input
             value={inputValue}
             inputRef={inputRef}
@@ -106,12 +93,21 @@ const TaskEditor = (props) => {
           </ul>
         </div>
         <div className={styles.actions}>
-          <Button text="Создать" submitButton isDisabled={!isInputValid()} onClick={handleSubmit}/>
-          <Button text="Отмена" cancelButton onClick={onCloseEditor} />
+          <Button
+            text="Создать"
+            submitButton
+            isDisabled={!isInputValid()}
+            type="submit"
+          />
+          <Button
+            text="Отмена"
+            cancelButton
+            onClick={onCloseEditor}
+          />
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default TaskEditor;

@@ -1,13 +1,13 @@
-import { NavBar, SideBar } from "@/components"
-import IncomingTasks from "@/pages/incomingTasks";
-import styles from './content.module.css'
+import { NavBar, SideBar } from '@/components';
+import IncomingTasks from '@/pages';
+import styles from './content.module.css';
 
-const Content = ({tasks, onToggleComplete}) => {
+const Content = () => {
 
   return (
     <div className={styles.content}>
       <NavBar />
-      <IncomingTasks tasks={tasks} onToggleComplete={onToggleComplete}/>
+      <IncomingTasks />
       <SideBar />
     </div>
   )

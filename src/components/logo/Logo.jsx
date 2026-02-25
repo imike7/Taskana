@@ -1,13 +1,13 @@
-import {classNames} from "@/utils";
-import {Icon} from "@/components";
-import styles from "./logo.module.css";
+import { Icon } from '@/components';
+import { classNames } from '@/utils';
+import styles from './logo.module.css';
 
 const Logo = (props) => {
   const {
-    className = '',
-  } = props
+    className = "",
+  } = props;
 
-  const title = 'На главную'
+  const title = "На главную";
 
   return (
     <a
@@ -21,4 +21,4 @@ const Logo = (props) => {
   )
 }
 
-export default Logo
+export default Logo;

@@ -1,3 +1,3 @@
-import Illustration from "./Illustration.jsx";
+import Illustration from './Illustration';
 
 export default Illustration

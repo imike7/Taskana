@@ -1,14 +1,14 @@
-import { Footer, MainContainer } from "@/components"
-import styles from './incomingTasks.module.css'
+import { Footer, MainContainer } from '@/components';
+import styles from './incomingTasks.module.css';
 
-const IncomingTasks = ({tasks, onToggleComplete}) => {
+const IncomingTasks = () => {
 
   return (
     <div className={styles.incomingTasks}>
-      <MainContainer tasks={tasks} onToggleComplete={onToggleComplete}/>
+      <MainContainer />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default IncomingTasks
+export default IncomingTasks;

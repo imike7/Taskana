@@ -1,6 +1,6 @@
-import {classNames} from "@/utils";
+import { Icon } from '@/components';
+import { classNames } from '@/utils';
 import styles from './navBarLink.module.css';
-import {Icon} from "@/components";
 
 const NavBarLink = (props) => {
   const {
@@ -9,7 +9,7 @@ const NavBarLink = (props) => {
     target,
     text,
     iconName
-  } = props
+  } = props;
 
   return (
     <a
@@ -22,7 +22,7 @@ const NavBarLink = (props) => {
         {text}
       </span>
     </a>
-  )
-}
+  );
+};
 
 export default NavBarLink;

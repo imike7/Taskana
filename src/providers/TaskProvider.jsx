@@ -1,48 +1,59 @@
-import {useState} from "react";
-import TaskContext from "@/context/TaskContext";
-import {EDITOR_TYPES} from "@/constants/edit";
+import { useState, useMemo } from 'react';
+import { TaskContext } from '@/context';
+import { generateId } from '@/utils';
 
-const TaskProvider = ( {children} ) => {
-  const [tasks, setTasks] = useState([])
-  const [isEditorOpen, setIsEditorOpen] = useState(false)
-  // const [editingTask, setEditingTask] = useState(null)
+export const TaskProvider = ( {children} ) => {
+  const [tasks, setTasks] = useState([]);
+  const [isEditorOpen, setIsEditorOpen] = useState(false);
 
-  // const [type, setType] = useState(EDITOR_TYPES.CREATE)
-  // const [editingTask, setEditingTask] = useState(null)
-
-  const handleOpenTaskEditor = (type, id = '') => {
-    // const editingTask = tasks.find((el) => el.id === id)
-    // setEditingTask(editingTask ? { ...editingTask } : null)
+  const handleOpenEditor = () => {
     setIsEditorOpen(true)
-    // setType(type)
-  }
+  };
 
-  const handleCloseTaskEditor = () => {
+  const handleCloseEditor = () => {
     setIsEditorOpen(false)
-    // setEditingTask(null)
-    // setType(EDITOR_TYPES.CREATE)
+  };
+
+  const handleCreateTask = (title, priority) => {
+    const newTask = {
+      id: generateId(),
+      title,
+      priority,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      isDone: false,
+    };
+
+    setTasks(prevTasks => [...prevTasks, newTask]);
+    handleCloseEditor();
+  };
+
+  const handleToggleComplete = (taskId) => {
+    setTasks(prevTasks =>
+      prevTasks.map(task =>
+        task.id === taskId
+          ? { ...task, isDone: !task.isDone, updatedAt: new Date().toISOString() }
+          : task
+      )
+    );
   }
 
-  const addTask = (task) => {
-    setTasks((prev) => {
-      return [...prev, task]
-    })
-  }
+  const sortedTasks = useMemo(() => {
+    return tasks.slice().reverse();
+  }, [tasks]);
+
+  const value = {
+    tasks: sortedTasks,
+    isEditorOpen,
+    handleOpenEditor,
+    handleCloseEditor,
+    handleCreateTask,
+    handleToggleComplete,
+  };
 
   return (
-    <TaskContext.Provider
-      value={{
-      isEditorOpen,
-      handleOpenTaskEditor,
-      handleCloseTaskEditor,
-      tasks,
-      addTask,
-      // type,
-    }}
-    >
+    <TaskContext.Provider value={value}>
       {children}
     </TaskContext.Provider>
-  )
-}
-
-export default TaskProvider
+  );
+};

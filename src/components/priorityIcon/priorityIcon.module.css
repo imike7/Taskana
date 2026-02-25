@@ -4,6 +4,7 @@
   cursor: pointer;
   user-select: none;
   color: transparent;
+  padding: 2px;
 }
 
 .hiddenCheckbox {
@@ -24,7 +25,7 @@
   height: 20px;
   background-color: var(--color-neutral-0);
   border: 1.5px solid var(--color-neutral-400);
-  border-radius: 4px;
+  border-radius: var(--border-radius-small);
   outline: 4px solid transparent;
   transition:
     border-color var(--transition-duration),
@@ -47,11 +48,6 @@
   border-color: var(--color-neutral-800);
 }
 
-/*.hiddenCheckbox:focus-visible + .customCheckbox {
-  outline: 2px solid var(--color-primary-440);
-  outline-offset: 2px;
-}*/
-
 .customCheckbox.disabled {
   background-color: var(--color-neutral-200);
   border-color: var(--color-neutral-300);
@@ -72,24 +68,24 @@
 }
 
 .customCheckbox.low {
-  --priority-color: var(--color-neutral-400);
+  --priority-border-color : var(--color-neutral-400);
   --priority-hover: var(--color-neutral-800);
-  --priority-focused: var(--color-neutral-600);
-  border-color: var(--priority-color);
+  --priority-focused: var(--color-neutral-400);
+  border-color: var(--priority-border-color );
 }
 
 .customCheckbox.medium {
-  --priority-color: var(--color-secondary-300);
+  --priority-border-color : var(--color-secondary-300);
   --priority-hover: var(--color-secondary-500);
   --priority-focused: var(--color-secondary-100);
-  border-color: var(--priority-color);
+  border-color: var(--priority-border-color );
 }
 
 .customCheckbox.high {
-  --priority-color: var(--color-primary-300);
+  --priority-border-color : var(--color-primary-300);
   --priority-hover: var(--color-primary-500);
   --priority-focused: var(--color-primary-100);
-  border-color: var(--priority-color);
+  border-color: var(--priority-border-color );
 }
 
 .container:hover .customCheckbox:not(.disabled) {
@@ -97,6 +93,6 @@
 }
 
 .customCheckbox:focus-visible {
-  border-color: var(--priority-color);
+  border-color: var(--priority-hover);
   outline-color: var(--priority-focused);
 }

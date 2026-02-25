@@ -1,14 +1,14 @@
+import { PriorityIcon } from '@/components';
 import styles from "./taskItem.module.css";
-import {PriorityIcon} from "@/components";
 
 const TaskItem = (props) => {
-  const {task, onToggleComplete} = props
+  const {task, onToggleComplete} = props;
 
   const handleToggle = () => {
     if (onToggleComplete) {
       onToggleComplete(task.id);
     }
-  }
+  };
 
   return (
     <li
@@ -16,16 +16,16 @@ const TaskItem = (props) => {
       data-priority={task.priority}
       tabIndex={0}
     >
-      {/*<form className={styles.task}>*/}
+      <div className={styles.inner}>
         <PriorityIcon
           priority={task.priority}
-          checked={task.completed}
+          isChecked={task.isDone}
           onChange={handleToggle}
         />
         <p className={styles.text}>{task.title}</p>
-      {/*</form>*/}
+      </div>
     </li>
-  )
-}
+  );
+};
 
 export default TaskItem;

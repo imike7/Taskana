@@ -1,10 +1,10 @@
-import {Illustration} from "@/components";
-import styles from "./statistic.module.css";
+import { Illustration } from '@/components';
+import styles from './statistic.module.css';
 
 const Statistic = (props) => {
   const {
     statisticData = []
-  } = props
+  } = props;
 
   if (statisticData.length === 0) {
     return (
@@ -14,8 +14,8 @@ const Statistic = (props) => {
           Здесь мы&nbsp;поможем тебе управлять твоими задачами, отслеживать статистику и&nbsp;самочувствие.
         </p>
       </div>
-    )
+    );
   }
-}
+};
 
-export default Statistic
+export default Statistic;

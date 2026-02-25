@@ -1,5 +1,5 @@
-import {useContext} from "react";
-import {ThemeContext} from "@/context";
+import { useContext } from 'react';
+import { ThemeContext } from '@/context';
 
 export const useTheme = () => {
   const theme = useContext(ThemeContext)
@@ -7,4 +7,4 @@ export const useTheme = () => {
     throw new Error('useTheme должен использоваться внутри ThemeProvider')
   }
   return theme
-}
+};

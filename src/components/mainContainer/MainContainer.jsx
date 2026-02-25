@@ -1,16 +1,16 @@
-import { TaskList } from "@/components";
-import styles from "./mainContainer.module.css";
+import { TaskList } from '@/components';
+import styles from './mainContainer.module.css';
 
-const MainContainer = ({tasks, onToggleComplete}) => {
+const MainContainer = () => {
 
   return (
     <div className={styles.mainContainer}>
       <header className={styles.header}>
-        <h1>Входящие</h1>
+        <h2>Входящие</h2>
       </header>
-      <TaskList tasks={tasks} onToggleComplete={onToggleComplete}/>
+      <TaskList />
     </div>
-  )
+  );
 }
 
 export default MainContainer;

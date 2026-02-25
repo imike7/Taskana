@@ -1,12 +1,12 @@
-import {classNames} from "@/utils";
-import {Icon} from "@/components";
-import styles from './button.module.css'
+import { Icon } from '@/components';
+import { classNames } from '@/utils';
+import styles from './button.module.css';
 
 const Button = (props) => {
 
   const {
-    className = '',
-    type = 'button',
+    className = "",
+    type = "button",
     isDisabled = false,
     isLoading = false,
     onClick,
@@ -14,9 +14,9 @@ const Button = (props) => {
     submitButton,
     cancelButton,
     accentButton,
-    iconName = '',
+    iconName = "",
     extraAttrs,
-  } = props
+  } = props;
 
   return (
     <button
@@ -44,8 +44,7 @@ const Button = (props) => {
         </>
         )}
     </button>
-
   )
 }
 
-export default Button
+export default Button;

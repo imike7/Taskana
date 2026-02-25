@@ -1,5 +1,5 @@
-  import { NavBarLink } from "@/components";
-  import styles from './navBar.module.css'
+  import { NavBarLink } from '@/components';
+  import styles from './navBar.module.css';
 
   const NAV_ITEMS = [
     {
@@ -8,7 +8,7 @@
       text: 'Входящие',
       iconName: 'storage',
     }
-  ]
+  ];
 
   const NavBar = () => {
 
@@ -24,7 +24,7 @@
           ))}
         </ul>
       </nav>
-    )
-  }
+    );
+  };
 
-  export default NavBar
+  export default NavBar;

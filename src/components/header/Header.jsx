@@ -1,9 +1,9 @@
-import {Button, Logo, ThemeSwitcher} from "@/components";
-import styles from './header.module.css'
-import {useTask} from "@/hooks/useTask";
+import { useTask } from '@/hooks';
+import { Button, Logo, ThemeSwitcher } from '@/components';
+import styles from './header.module.css';
 
-const Header = ({ onOpenEditor }) => {
-  // const { handleOpenTaskEditor } = useTask()
+const Header = () => {
+  const { handleOpenEditor  } = useTask()
 
   return (
     <header className={styles.header}>
@@ -12,7 +12,7 @@ const Header = ({ onOpenEditor }) => {
         <Button
           iconName="plus"
           text="Создать"
-          onClick={onOpenEditor}
+          onClick={handleOpenEditor}
           accentButton
         />
         <ThemeSwitcher />
@@ -21,4 +21,4 @@ const Header = ({ onOpenEditor }) => {
   )
 }
 
-export default Header
+export default Header;

@@ -1,3 +1,3 @@
-import priorityIcon from './priorityIcon'
+import PriorityIcon from './PriorityIcon';
 
-export default priorityIcon
+export default PriorityIcon;

@@ -1,13 +1,7 @@
-import {Icon} from "@/components";
-import {classNames} from "@/utils";
-import {PRIORITIES} from "@/constants/priorities";
-import styles from './priorityButton.module.css'
-
-/*const priorityIcons = {
-  1: <Icon name="minus"/>,
-  2: <Icon name="chevron-top"/>,
-  3: <Icon name="arrow-two"/>
-}*/
+import { Icon } from '@/components';
+import { classNames } from '@/utils';
+import { PRIORITIES } from '@/constants';
+import styles from './priorityButton.module.css';
 
 const PriorityButton = (props) => {
   const {
@@ -15,9 +9,9 @@ const PriorityButton = (props) => {
     priority,
     selected,
     onClick,
-  } = props
+  } = props;
 
-  const priorityName = PRIORITIES[priority]
+  const priorityName = PRIORITIES[priority];
 
   return (
     <button
@@ -27,10 +21,9 @@ const PriorityButton = (props) => {
       title={`${priorityName} priority button`}
       type="button"
     >
-      {/*{priorityIcons[priority]}*/}
       <Icon name={iconName}/>
     </button>
-  )
-}
+  );
+};
 
-export default PriorityButton
+export default PriorityButton;

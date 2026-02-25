@@ -1,47 +1,40 @@
-import {Illustration, TaskItem} from "@/components";
-import styles from './taskList.module.css'
-// import {useTask} from "@/hooks/useTask";
+import { useTask } from '@/hooks';
+import { Illustration, TaskItem } from '@/components';
+import styles from './taskList.module.css';
 
-const TaskList = (props) => {
+const TaskList = () => {
 
-  const {
-    onTaskEditorShown,
-    currentTask,
-    tasks,
-    onToggleComplete,
-  } = props
-
-  // const { tasks } = useTask()
+  const { tasks, handleToggleComplete  } = useTask();
 
   if (!tasks || tasks.length === 0) {
     return (
-      <main className={styles.emptyList}>
+      <main className={styles.list}>
         <section className={styles.section}>
             <div className={styles.description}>
-              <h2>Все&nbsp;твои задачи организованы как&nbsp;надо</h2>
+              <h3>Все&nbsp;твои задачи организованы как&nbsp;надо</h3>
               <p>Отличная работа! Ты большой молодец!</p>
             </div>
             <Illustration name="wellDone" />
         </section>
       </main>
-    )
+    );
   }
 
   return (
-    <main className={styles.taskList}>
+    <main>
       <section className={styles.section}>
-        <ul className={styles.emptyList}>
+        <ul className={styles.list}>
           {tasks.map((task) => (
             <TaskItem
               key={task.id}
               task={task}
-              onToggleComplete={onToggleComplete}
+              onToggleComplete={handleToggleComplete}
             />
           ))}
         </ul>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default TaskList
+export default TaskList;

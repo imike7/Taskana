@@ -1,19 +1,19 @@
-import {classNames} from "@/utils";
-import { Note, WellDone } from "./illustrations"
-import styles from "./lllustration.module.css"
+import { Note, WellDone } from './illustrations';
+import { classNames } from '@/utils';
+import styles from './lllustration.module.css';
 
 const allImages = {
   wellDone: WellDone,
   note: Note,
-}
+};
 
 const Illustration = (props) => {
   const {
     className,
     name,
-  } = props
+  } = props;
 
-  const ImageComponent = allImages[name]
+  const ImageComponent = allImages[name];
 
   if (!ImageComponent) {
     console.warn(`Изображение "${name}" не найдено.`);
@@ -24,7 +24,7 @@ const Illustration = (props) => {
     <span className={classNames(styles.illustration, className)}>
       <ImageComponent />
     </span>
-  )
+  );
 }
 
 export default Illustration;

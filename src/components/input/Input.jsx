@@ -1,5 +1,5 @@
-import styles from "./input.module.css";
-import {Icon} from "@/components";
+import { Icon } from '@/components';
+import styles from './input.module.css';
 
 const Input = (props) => {
   const {
@@ -9,12 +9,12 @@ const Input = (props) => {
     onChange,
     disabled,
     required,
-  } = props
+  } = props;
 
   const handleReset = (event) => {
     event.preventDefault()
     onChange("")
-  }
+  };
 
   return (
     <div className={styles.container} >
@@ -25,7 +25,6 @@ const Input = (props) => {
         id="input"
         className={styles.input}
         value={value ?? ""}
-        // onChange={onChange}
         onChange={event => onChange(event.target.value)}
         ref={inputRef}
         placeholder="Название задачи"

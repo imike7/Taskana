@@ -1,6 +1,5 @@
 const Logo = (props) => {
   const {
-    color = 'currentColor',
     ...extraAttrs
   } = props
 

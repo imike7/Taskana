@@ -12,7 +12,7 @@ import {
   ArrowTwo,
   ChevronTop,
   Minus,
-} from "./icons";
+} from './icons';
 
 const icons = {
   plus: Plus,
@@ -28,15 +28,15 @@ const icons = {
   arrowTwo: ArrowTwo,
   chevronTop: ChevronTop,
   minus: Minus,
-}
+};
 
 const Icon = (props) => {
   const {
     name,
-    color = 'currentColor',
-  } = props
+    color = "currentColor",
+  } = props;
 
-  const IconComponent = icons[name]
+  const IconComponent = icons[name];
 
   if (!IconComponent) {
     console.warn(`Иконка "${name}" не найдена.`);
@@ -48,4 +48,4 @@ const Icon = (props) => {
     )
 }
 
-export default Icon
+export default Icon;

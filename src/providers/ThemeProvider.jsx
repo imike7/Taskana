@@ -1,8 +1,8 @@
-import {useEffect, useState} from "react";
-import {DATA_THEME_ATTRIBUTE, THEME} from "@/constants/theme";
-import ThemeContext from "../context/ThemeContext";
+import { useEffect, useState } from 'react';
+import { ThemeContext } from '@/context';
+import { DATA_THEME_ATTRIBUTE, THEME } from '@/constants';
 
-const ThemeProvider = ({ children }) => {
+export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(THEME.LIGHT);
 
   const toggleTheme = () => {
@@ -17,7 +17,5 @@ const ThemeProvider = ({ children }) => {
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
-  )
-}
-
-export default ThemeProvider;
+  );
+};

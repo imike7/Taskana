@@ -1,9 +1,7 @@
 .base {
   display: inline-flex;
   justify-content: start;
-  /*vertical-align: top;*/
   border-radius: var(--border-radius);
-  /*text-decoration: none;*/
   overflow: hidden;
 }
 
@@ -22,7 +20,7 @@
   padding: 8px 16px 8px 12px;
   width: 118px;
   height: 40px;
-  gap: 8px;
+  gap: var(--button-gap);
   color: var(--color-base-white);
   background-color: var(--color-primary-440);
   outline: 2px solid transparent;
@@ -48,7 +46,6 @@
   &.loading {
     background-color: var(--color-primary-300);
     box-shadow: none;
-    /*pointer-events: none;*/
   }
 
   &:disabled,
@@ -118,7 +115,6 @@
   &.loading {
     background-color: var(--color-neutral-600);
     box-shadow: none;
-    /*pointer-events: none;*/
   }
 
   &:disabled,
@@ -148,7 +144,6 @@
   &.loading {
     background-color: var(--color-neutral-100);
     box-shadow: none;
-    /*pointer-events: none;*/
   }
 
   &:disabled,
