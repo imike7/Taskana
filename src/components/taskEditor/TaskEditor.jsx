@@ -68,29 +68,78 @@ const TaskEditor = (props) => {
   return (
     <div className={classNames(styles.taskEditor, isOpen && styles.open)}>
       <form onSubmit={handleSubmit}>
-        <div className={styles.creation}>
-          <h2>Создание задачи</h2>
-          <Input
-            value={inputValue}
-            inputRef={inputRef}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div className={styles.priorityContainer}>
-          <span className={styles.priorityText}>Приоритет</span>
-          <ul className={styles.buttons}>
-            {priorityButtons.map(button => (
-              <li key={button.priority}>
-                <PriorityButton
-                  iconName={button.iconName}
-                  priority={button.priority}
-                  selected={currentPriority === button.priority}
-                  onClick={() => handlePriorityClick(button.priority)}
-                />
-              </li>
-            ))}
-          </ul>
+        <div className={styles.scrollWrapper}>
+          <div className={styles.creation}>
+            <h2>Создание задачи</h2>
+            <Input
+              value={inputValue}
+              inputRef={inputRef}
+              onChange={handleInputChange}
+              required
+            />
+          </div>
+          <div className={styles.centerActionsWrapper}>
+            <div className={styles.priorityContainer}>
+              <span className={styles.priorityText}>Приоритет</span>
+              <ul className={styles.buttons}>
+                {priorityButtons.map(button => (
+                  <li key={button.priority}>
+                    <PriorityButton
+                      iconName={button.iconName}
+                      priority={button.priority}
+                      selected={currentPriority === button.priority}
+                      onClick={() => handlePriorityClick(button.priority)}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.priorityContainer}>
+              <span className={styles.priorityText}>Приоритет</span>
+              <ul className={styles.buttons}>
+                {priorityButtons.map(button => (
+                  <li key={button.priority}>
+                    <PriorityButton
+                      iconName={button.iconName}
+                      priority={button.priority}
+                      selected={currentPriority === button.priority}
+                      onClick={() => handlePriorityClick(button.priority)}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.priorityContainer}>
+              <span className={styles.priorityText}>Приоритет</span>
+              <ul className={styles.buttons}>
+                {priorityButtons.map(button => (
+                  <li key={button.priority}>
+                    <PriorityButton
+                      iconName={button.iconName}
+                      priority={button.priority}
+                      selected={currentPriority === button.priority}
+                      onClick={() => handlePriorityClick(button.priority)}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.priorityContainer}>
+              <span className={styles.priorityText}>Приоритет</span>
+              <ul className={styles.buttons}>
+                {priorityButtons.map(button => (
+                  <li key={button.priority}>
+                    <PriorityButton
+                      iconName={button.iconName}
+                      priority={button.priority}
+                      selected={currentPriority === button.priority}
+                      onClick={() => handlePriorityClick(button.priority)}
+                    />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
         <div className={styles.actions}>
           <Button

@@ -1,14 +1,6 @@
-  import { NavBarLink } from '@/components';
-  import styles from './navBar.module.css';
-
-  const NAV_ITEMS = [
-    {
-      id: '1',
-      href: '#',
-      text: 'Входящие',
-      iconName: 'storage',
-    }
-  ];
+import { NavBarLink } from '@/components';
+import { NAV_ITEMS } from "@/constants";
+import styles from './navBar.module.css';
 
   const NavBar = () => {
 

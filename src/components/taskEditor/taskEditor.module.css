@@ -17,6 +17,11 @@
     visibility var(--transition-duration);
 }
 
+.scrollWrapper {
+  height: 100%;
+  overflow-y: auto;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -25,8 +30,18 @@ form {
 }
 
 .creation {
+  position: sticky;
+  top: 0;
   display: grid;
   padding: 24px;
+  gap: 24px;
+  background-color: var(--color-neutral-100);
+  transition: background-color var(--transition-duration);
+}
+
+.centerActionsWrapper {
+  display: grid;
+  margin-bottom: auto;
   gap: 24px;
 }
 

@@ -1,2 +1,2 @@
-export { TaskContext } from './TaskContext';
-export { ThemeContext } from './ThemeContext';
+export { TaskContext } from './task-context';
+export { ThemeContext } from './theme-context';

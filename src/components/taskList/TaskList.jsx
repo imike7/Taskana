@@ -8,7 +8,7 @@ const TaskList = () => {
 
   if (!tasks || tasks.length === 0) {
     return (
-      <main className={styles.list}>
+      <div className={styles.list}>
         <section className={styles.section}>
             <div className={styles.description}>
               <h3>Все&nbsp;твои задачи организованы как&nbsp;надо</h3>
@@ -16,7 +16,7 @@ const TaskList = () => {
             </div>
             <Illustration name="wellDone" />
         </section>
-      </main>
+      </div>
     );
   }
 

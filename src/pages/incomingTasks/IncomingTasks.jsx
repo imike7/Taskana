@@ -4,10 +4,10 @@ import styles from './incomingTasks.module.css';
 const IncomingTasks = () => {
 
   return (
-    <div className={styles.incomingTasks}>
+    <main className={styles.incomingTasks}>
       <MainContainer />
       <Footer />
-    </div>
+    </main>
   );
 };
 

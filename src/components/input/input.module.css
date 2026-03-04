@@ -19,7 +19,7 @@
 
 .input {
   height: 56px;
-  padding: 0 0 0 16px;
+  padding: 0 40px 0 16px;
   color: var(--color-neutral-800);
   background-color: transparent;
   border-style: solid;
@@ -38,18 +38,14 @@
     border-color: var(--color-neutral-600);
   }
 
-  &:focus-visible {
-    outline-offset: 2px;
-    border: none;
-    outline-color: var(--color-neutral-800);
-  }
-
   &:not(:placeholder-shown) {
     border-color: var(--color-neutral-400);
   }
 
   &:focus {
-    border-color: var(--color-neutral-0);
+    border: 2px solid var(--color-neutral-800);
+    box-shadow: none;
+    outline: none;
   }
 
   &::placeholder {
