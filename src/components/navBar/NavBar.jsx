@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { NavBarLink } from '@/components';
 import { NAV_ITEMS } from "@/constants";
 import styles from './navBar.module.css';
@@ -19,4 +20,4 @@ import styles from './navBar.module.css';
     );
   };
 
-  export default NavBar;
+  export default memo(NavBar);

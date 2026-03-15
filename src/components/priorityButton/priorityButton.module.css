@@ -14,7 +14,7 @@
 
   &:hover,
   &:focus-visible {
-    box-shadow: var(--shadow-priority-hover);
+    box-shadow: var(--shadow-button-priority-dropdown);
   }
 
   &:focus-visible {
@@ -23,7 +23,7 @@
 
   &:active,
   &.selected {
-    box-shadow: var(--shadow-priority-active);
+    box-shadow: var(--shadow-sm);
   }
 }
 

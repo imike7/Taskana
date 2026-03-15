@@ -1,20 +1,13 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { TaskContext } from '@/context';
 import { generateId } from '@/utils';
+import { sortFunctions } from "@/utils";
 
 export const TaskProvider = ( {children} ) => {
   const [tasks, setTasks] = useState([]);
-  const [isEditorOpen, setIsEditorOpen] = useState(false);
+  const [sortBy, setSortBy] = useState('updatedAt:desc')
 
-  const handleOpenEditor = () => {
-    setIsEditorOpen(true)
-  };
-
-  const handleCloseEditor = () => {
-    setIsEditorOpen(false)
-  };
-
-  const handleCreateTask = (title, priority) => {
+  const handleCreateTask = useCallback((title, priority) => {
     const newTask = {
       id: generateId(),
       title,
@@ -23,12 +16,22 @@ export const TaskProvider = ( {children} ) => {
       updatedAt: new Date().toISOString(),
       isDone: false,
     };
+    setTasks(prev => [...prev, newTask]);
+    }, []);
 
-    setTasks(prevTasks => [...prevTasks, newTask]);
-    handleCloseEditor();
-  };
+  const handleUpdateTask = useCallback((id, title, priority) => {
+    setTasks(prevTasks =>
+      prevTasks.map(task =>
+        task.id === id
+          ? {
+            ...task, title, priority, updatedAt: new Date().toISOString()
+          }
+          : task
+      )
+    );
+  }, []);
 
-  const handleToggleComplete = (taskId) => {
+  const handleToggleComplete = useCallback((taskId) => {
     setTasks(prevTasks =>
       prevTasks.map(task =>
         task.id === taskId
@@ -36,20 +39,40 @@ export const TaskProvider = ( {children} ) => {
           : task
       )
     );
-  }
+  }, []);
+
+  const handleDeleteTask = useCallback((id) => {
+    setTasks(prevTasks => prevTasks.filter(task => task.id !== id));
+  }, []);
+
+  const sortingTasks = useCallback((sortValue) => {
+    setSortBy(sortValue);
+  }, []);
 
   const sortedTasks = useMemo(() => {
-    return tasks.slice().reverse();
-  }, [tasks]);
+    const sortFunction = sortFunctions[sortBy];
+    if (!sortFunction) return tasks;
 
-  const value = {
+    return [...tasks].sort(sortFunction);
+  }, [tasks, sortBy]);
+
+  const value = useMemo(() => ({
     tasks: sortedTasks,
-    isEditorOpen,
-    handleOpenEditor,
-    handleCloseEditor,
+    sortBy,
+    sortingTasks,
     handleCreateTask,
+    handleUpdateTask,
+    handleDeleteTask,
     handleToggleComplete,
-  };
+  }), [
+    sortedTasks,
+    sortBy,
+    sortingTasks,
+    handleCreateTask,
+    handleUpdateTask,
+    handleDeleteTask,
+    handleToggleComplete,
+  ]);
 
   return (
     <TaskContext.Provider value={value}>

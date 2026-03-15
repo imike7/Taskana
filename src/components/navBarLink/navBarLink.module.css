@@ -8,7 +8,7 @@
   text-decoration: none;
   overflow: hidden;
   background-color: var(--color-neutral-800);
-  box-shadow: var(--shadow-default);
+  box-shadow: var(--shadow-button-link);
   padding: 8px;
   width: 172px;
   outline: 2px solid transparent;
@@ -22,13 +22,13 @@
 
   &:hover {
     background-color: var(--color-neutral-700);
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--shadow-button-link-md);
   }
 
   &:focus-visible {
     background-color: var(--color-neutral-700);
     outline-color: var(--color-neutral-900);
-    box-shadow: var(--shadow-hover);
+    box-shadow: var(--shadow-button-link-md);
   }
 }
 

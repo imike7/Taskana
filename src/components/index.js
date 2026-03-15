@@ -17,7 +17,7 @@ export { default as PriorityButton } from './priorityButton';
 export { default as NavBarLink } from './navBarLink';
 export { default as TaskItem } from './taskItem';
 export { default as PriorityIcon } from './priorityIcon';
-
+export { default as Dropdown } from './dropdown';
 
 
 

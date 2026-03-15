@@ -1,3 +1,4 @@
+import { useCallback, useMemo } from "react";
 import { Icon } from '@/components';
 import styles from './input.module.css';
 
@@ -11,10 +12,14 @@ const Input = (props) => {
     required,
   } = props;
 
-  const handleReset = (event) => {
+  const handleReset = useCallback((event) => {
     event.preventDefault()
     onChange("")
-  };
+  }, [onChange]);
+
+  const showResetButton = useMemo(() => {
+    return value && value.trim() && !disabled;
+  }, [value, disabled]);
 
   return (
     <div className={styles.container} >
@@ -33,7 +38,7 @@ const Input = (props) => {
         disabled={disabled}
         required
       />
-      {value.trim() && (
+      {showResetButton && (
           <button
             className={styles.button}
             type="reset"

@@ -1,12 +1,23 @@
-import { PriorityIcon } from '@/components';
+import { memo } from "react";
+import { Button, PriorityIcon } from '@/components';
 import styles from "./taskItem.module.css";
 
 const TaskItem = (props) => {
-  const {task, onToggleComplete} = props;
+  const {
+    task,
+    onToggleComplete,
+    onEdit,
+  } = props;
 
   const handleToggle = () => {
     if (onToggleComplete) {
       onToggleComplete(task.id);
+    }
+  };
+
+  const handleEditClick = () => {
+    if (onEdit) {
+      onEdit(task);
     }
   };
 
@@ -24,8 +35,14 @@ const TaskItem = (props) => {
         />
         <p className={styles.text}>{task.title}</p>
       </div>
+      <Button
+        iconSecond
+        isLabelHidden
+        iconName="edit"
+        onClick={handleEditClick}
+      />
     </li>
   );
 };
 
-export default TaskItem;
+export default memo(TaskItem);

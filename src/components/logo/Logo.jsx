@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Icon } from '@/components';
 import { classNames } from '@/utils';
 import styles from './logo.module.css';
@@ -21,4 +22,4 @@ const Logo = (props) => {
   )
 }
 
-export default Logo;
+export default memo(Logo);

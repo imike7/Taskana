@@ -12,6 +12,16 @@ import {
   ArrowTwo,
   ChevronTop,
   Minus,
+  Filter,
+  NewOld,
+  OldNew,
+  NumBigToLow,
+  NumLowToBig,
+  Importance,
+  Unimportant,
+  Az,
+  Za,
+  Trash,
 } from './icons';
 
 const icons = {
@@ -28,12 +38,23 @@ const icons = {
   arrowTwo: ArrowTwo,
   chevronTop: ChevronTop,
   minus: Minus,
+  filter: Filter,
+  newOld: NewOld,
+  oldNew: OldNew,
+  numBigToLow: NumBigToLow,
+  numLowToBig: NumLowToBig,
+  importance: Importance,
+  unimportant: Unimportant,
+  az: Az,
+  za: Za,
+  trash: Trash,
 };
 
 const Icon = (props) => {
   const {
     name,
     color = "currentColor",
+    className
   } = props;
 
   const IconComponent = icons[name];
@@ -44,7 +65,7 @@ const Icon = (props) => {
   }
 
   return (
-      <IconComponent color={color} />
+      <IconComponent color={color} className={className}/>
     )
 }
 

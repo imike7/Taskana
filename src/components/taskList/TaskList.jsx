@@ -1,12 +1,14 @@
-import { useTask } from '@/hooks';
+import { memo } from 'react'
+import { useTask, useEditor } from '@/hooks';
 import { Illustration, TaskItem } from '@/components';
 import styles from './taskList.module.css';
 
 const TaskList = () => {
 
   const { tasks, handleToggleComplete  } = useTask();
+  const { handleOpenEditEditor } = useEditor();
 
-  if (!tasks || tasks.length === 0) {
+    if (!tasks || tasks.length === 0) {
     return (
       <div className={styles.list}>
         <section className={styles.section}>
@@ -29,6 +31,7 @@ const TaskList = () => {
               key={task.id}
               task={task}
               onToggleComplete={handleToggleComplete}
+              onEdit={() => handleOpenEditEditor(task)}
             />
           ))}
         </ul>
@@ -37,4 +40,4 @@ const TaskList = () => {
   );
 };
 
-export default TaskList;
+export default memo(TaskList);

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { NavBar, SideBar } from '@/components';
 import IncomingTasks from '@/pages';
 import styles from './content.module.css';
@@ -13,4 +14,4 @@ const Content = () => {
   )
 }
 
-export default Content;
+export default memo(Content);

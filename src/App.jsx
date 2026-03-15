@@ -1,4 +1,4 @@
-import { ThemeProvider, TaskProvider } from '@/providers';
+import {ThemeProvider, TaskProvider, EditorProvider} from '@/providers';
 import AppLayout from "./layouts";
 
 
@@ -6,7 +6,9 @@ export const App = () => {
   return (
     <ThemeProvider>
       <TaskProvider>
-        <AppLayout />
+        <EditorProvider>
+          <AppLayout />
+        </EditorProvider>
       </TaskProvider>
     </ThemeProvider>
   );

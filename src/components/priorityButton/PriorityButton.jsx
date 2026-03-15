@@ -17,8 +17,8 @@ const PriorityButton = (props) => {
     <button
       className={classNames(styles.button, styles[priorityName], selected && styles.selected)}
       onClick={onClick}
-      aria-label={`${priorityName} priority button`}
-      title={`${priorityName} priority button`}
+      aria-label={`${priorityName} приоритет`}
+      title={`${priorityName} приоритет`}
       type="button"
     >
       <Icon name={iconName}/>

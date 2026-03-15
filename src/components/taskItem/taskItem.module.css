@@ -1,6 +1,7 @@
 .item {
+  position: relative;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: start;
   gap: 16px;
   align-self: stretch;
@@ -10,32 +11,47 @@
   outline: 2px solid transparent;
   border-radius: var(--border-radius);
   transition: background-color var(--transition-duration);
-  /*z-index: var(--layer-task);*/
 
   &:hover {
-    background-color: var(--color-neutral-100);
-    box-shadow: var(--shadow-priority-active);
+    background-color: var(--color-neutral-200);
+    box-shadow: var(--shadow-sm);
   }
 
   &:focus-visible {
-    background-color: var(--color-neutral-0);
+    background-color: var(--color-neutral-200);
     outline-color: var(--color-neutral-900);
+    box-shadow: var(--shadow-sm);
+  }
+
+  & button {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-duration), visibility var(--transition-duration);
+  }
+
+  &:hover button,
+  &:focus-within button,
+  &:focus-visible button {
+    opacity: 1;
+    visibility: visible;
   }
 }
 
 .inner {
   display: flex;
-  align-items: flex-start;
+  align-items: start;
   padding-block: 8px;
   column-gap: 16px;
   flex: 1 0 0;
 }
 
 .text {
+  max-width: 100%;
   font-size: 18px;
   line-height: calc(4 / 3);
   text-align: start;
+  word-wrap: normal;
   overflow-wrap: break-word;
-  word-break: normal;
-  flex: 1 0 0;
+  word-break: break-word;
+  flex: 1 1 0;
 }

@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Footer, MainContainer } from '@/components';
 import styles from './incomingTasks.module.css';
 
@@ -11,4 +12,4 @@ const IncomingTasks = () => {
   );
 };
 
-export default IncomingTasks;
+export default memo(IncomingTasks);

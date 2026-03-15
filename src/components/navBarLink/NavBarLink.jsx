@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { Icon } from '@/components';
 import { classNames } from '@/utils';
 import styles from './navBarLink.module.css';
@@ -25,4 +26,4 @@ const NavBarLink = (props) => {
   );
 };
 
-export default NavBarLink;
+export default memo(NavBarLink);

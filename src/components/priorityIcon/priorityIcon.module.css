@@ -40,7 +40,7 @@
 .icon {
   width: 14px;
   height: 14px;
-  color: var(--color-neutral-0);
+  /*color: var(--color-neutral-0);*/
   display: block;
 }
 

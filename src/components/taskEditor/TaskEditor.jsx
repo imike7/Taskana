@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { Button, Input, PriorityButton } from '@/components';
+import {useCallback, useEffect, useRef, useState, useMemo} from 'react';
+import { Button, Icon, Input, PriorityButton } from '@/components';
 import { classNames } from '@/utils';
 import styles from './taskEditor.module.css';
 
@@ -21,8 +21,11 @@ const priorityButtons = [
 const TaskEditor = (props) => {
   const {
     onCreate,
+    onUpdate,
+    onDelete,
     isOpen,
     onCloseEditor,
+    editingTask = null,
   } = props;
 
   const [inputValue, setInputValue] = useState("");
@@ -30,11 +33,55 @@ const TaskEditor = (props) => {
   const prevIsOpenRef = useRef(isOpen);
   const inputRef = useRef(null);
 
+  const isEditMode = !!editingTask;
+
+  const isInputValid = useMemo(() => {
+    return inputValue.trim() !== '';
+  }, [inputValue]);
+
+  const hasChanges = useMemo(() => {
+    if (!isEditMode || !editingTask) return true;
+
+    const titleChanged = inputValue.trim() !== editingTask.title;
+    const priorityChanged = currentPriority !== editingTask.priority;
+
+    return titleChanged || priorityChanged;
+  }, [isEditMode, editingTask, inputValue, currentPriority]);
+
+  const isSubmitDisabled = useMemo(() => {
+    return !isInputValid || (isEditMode && !hasChanges);
+  }, [isInputValid, isEditMode, hasChanges]);
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape' && isOpen) {
+        onCloseEditor();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen, onCloseEditor]);
+
+  useEffect(() => {
+    if (isOpen && editingTask) {
+      setInputValue(editingTask.title);
+      setCurrentPriority(editingTask.priority);
+    }
+  }, [isOpen, editingTask]);
+
   useEffect(() => {
     if (isOpen && inputRef.current) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         inputRef.current.focus();
       }, 400);
+
+      return () => clearTimeout(timer);
     }
   }, [isOpen]);
 
@@ -42,35 +89,58 @@ const TaskEditor = (props) => {
     if (prevIsOpenRef.current === true && isOpen === false) {
       setInputValue("");
       setCurrentPriority(1);
+
+      if (inputRef.current) {
+        inputRef.current.blur();
+      }
     }
     prevIsOpenRef.current = isOpen;
   }, [isOpen]);
 
-  const handleInputChange = (value) => {
-    setInputValue(value);
-  }
-
-  const handlePriorityClick = (priority) => {
-    setCurrentPriority(priority);
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (isInputValid() && onCreate) {
-      onCreate(inputValue, currentPriority);
+  useEffect(() => {
+    if (isOpen && editingTask === null) {
+      setInputValue("");
+      setCurrentPriority(1);
     }
-  };
+  }, [isOpen, editingTask]);
 
-  const isInputValid = () => {
-    return inputValue.trim() !== '';
-  };
+  const handleInputChange = useCallback((value) => {
+    setInputValue(value);
+  }, []);
+
+  const handlePriorityClick = useCallback((priority) => {
+    setCurrentPriority(priority);
+  }, []);
+
+  const handleSubmit = useCallback((e) => {
+    e.preventDefault();
+    if (!isSubmitDisabled) {
+      if (isEditMode && onUpdate) {
+        onUpdate(editingTask.id, inputValue, currentPriority);
+        onCloseEditor();
+      } else if (onCreate) {
+        onCreate(inputValue, currentPriority);
+        onCloseEditor();
+      }
+    }
+  }, [isEditMode, onUpdate, onCreate, editingTask?.id, inputValue, currentPriority, isSubmitDisabled, isInputValid, onCloseEditor]);
+
+  const handleDelete = useCallback(() => {
+    if (isEditMode && onDelete) {
+      onDelete(editingTask.id);
+      onCloseEditor();
+    }
+  }, [isEditMode, onDelete, editingTask?.id, onCloseEditor]);
 
   return (
-    <div className={classNames(styles.taskEditor, isOpen && styles.open)}>
+    <div
+      className={classNames(styles.taskEditor, isOpen && styles.open)}
+      inert={!isOpen || undefined}
+    >
       <form onSubmit={handleSubmit}>
         <div className={styles.scrollWrapper}>
           <div className={styles.creation}>
-            <h2>Создание задачи</h2>
+            <h2>{isEditMode ? 'Редактирование' : 'Создание задачи'}</h2>
             <Input
               value={inputValue}
               inputRef={inputRef}
@@ -94,65 +164,33 @@ const TaskEditor = (props) => {
                 ))}
               </ul>
             </div>
-            <div className={styles.priorityContainer}>
-              <span className={styles.priorityText}>Приоритет</span>
-              <ul className={styles.buttons}>
-                {priorityButtons.map(button => (
-                  <li key={button.priority}>
-                    <PriorityButton
-                      iconName={button.iconName}
-                      priority={button.priority}
-                      selected={currentPriority === button.priority}
-                      onClick={() => handlePriorityClick(button.priority)}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.priorityContainer}>
-              <span className={styles.priorityText}>Приоритет</span>
-              <ul className={styles.buttons}>
-                {priorityButtons.map(button => (
-                  <li key={button.priority}>
-                    <PriorityButton
-                      iconName={button.iconName}
-                      priority={button.priority}
-                      selected={currentPriority === button.priority}
-                      onClick={() => handlePriorityClick(button.priority)}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className={styles.priorityContainer}>
-              <span className={styles.priorityText}>Приоритет</span>
-              <ul className={styles.buttons}>
-                {priorityButtons.map(button => (
-                  <li key={button.priority}>
-                    <PriorityButton
-                      iconName={button.iconName}
-                      priority={button.priority}
-                      selected={currentPriority === button.priority}
-                      onClick={() => handlePriorityClick(button.priority)}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
         </div>
         <div className={styles.actions}>
-          <Button
-            text="Создать"
-            submitButton
-            isDisabled={!isInputValid()}
-            type="submit"
-          />
-          <Button
-            text="Отмена"
-            cancelButton
-            onClick={onCloseEditor}
-          />
+          <div className={styles.submitActions}>
+            <Button
+              text={isEditMode ? "Сохранить" : "Создать"}
+              textPrimary
+              isDisabled={isSubmitDisabled}
+              type="submit"
+            />
+            <Button
+              text="Отмена"
+              textSecondary
+              onClick={onCloseEditor}
+              type="reset"
+            />
+          </div>
+          {isEditMode && (
+            <Button
+              isLabelHidden
+              iconNegative
+              text="Удалить"
+              onClick={handleDelete}
+            >
+              <Icon name="trash" />
+            </Button>
+          )}
         </div>
       </form>
     </div>

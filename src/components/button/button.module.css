@@ -1,14 +1,14 @@
 .base {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
   justify-content: start;
-  border-radius: var(--border-radius);
   overflow: hidden;
+  gap: 8px;
+  border-radius: var(--border-radius);
 }
 
 .loading {
-  display: flex;
   justify-content: center;
-  align-items: center;
   box-shadow: none;
 
   svg {
@@ -16,35 +16,37 @@
   }
 }
 
-.accentButton {
+.textIconAccent {
   padding: 8px 16px 8px 12px;
   width: 118px;
   height: 40px;
   gap: var(--button-gap);
   color: var(--color-base-white);
-  background-color: var(--color-primary-440);
+  background-color: var(--color-primary-base-400);
   outline: 2px solid transparent;
   outline-offset: 2px;
-  box-shadow: var(--shadow-default);
+  box-shadow: var(--shadow-button-link);
   transition:
     outline-color var(--transition-duration),
     background-color var(--transition-duration),
     box-shadow var(--transition-duration);
 
-  &:hover:not(:disabled):not(:active):not(.loading) {
-    background-color: var(--color-primary-500);
-    box-shadow: var(--shadow-hover);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover:not(:disabled):not(:active):not(.loading) {
+      background-color: var(--color-primary-base-500);
+      box-shadow: var(--shadow-button-link-md);
+    }
   }
 
   &:focus-visible:not(:disabled):not(:active):not(.loading) {
-    background-color: var(--color-primary-500);
-    box-shadow: var(--shadow-hover);
+    background-color: var(--color-primary-base-500);
+    box-shadow: var(--shadow-button-link-md);
     outline-color: var(--color-base-white);
   }
 
   &:active:not(:disabled),
   &.loading {
-    background-color: var(--color-primary-300);
+    background-color: var(--color-primary-base-300);
     box-shadow: none;
   }
 
@@ -53,16 +55,16 @@
     color: rgba(255, 255, 255, 0.50);
     background-color: rgba(213, 16, 16, 0.50);
     cursor: not-allowed;
-    box-shadow: var(--shadow-default);
+    box-shadow: var(--shadow-button-link);
   }
 }
 
-.submitButton:disabled {
+.textPrimary:disabled {
   color: var(--color-neutral-0);
   background-color: var(--color-neutral-600);
 }
 
-.cancelButton:disabled {
+.textSecondary:disabled {
   color: var(--color-neutral-800);
   background-color: var(--color-neutral-100);
 }
@@ -76,8 +78,8 @@
   }
 }
 
-.submitButton,
-.cancelButton {
+.textPrimary,
+.textSecondary {
   padding: 12px 16px;
   height: 48px;
   font-size: 18px;
@@ -96,19 +98,20 @@
   }
 }
 
-.submitButton {
-  width: 98px;
+.textPrimary {
   color: var(--color-neutral-0);
   background-color: var(--color-neutral-800);
-  box-shadow: var(--shadow-default);
+  box-shadow: var(--shadow-button-link);
 
-  &:hover:not(:disabled):not(:active):not(.loading) {
-    background-color: var(--color-neutral-700);
-    box-shadow: var(--shadow-hover);
-  }
+  &:not(:disabled):not(:active):not(.loading) {
+    &:hover {
+      background-color: var(--color-neutral-700);
+      box-shadow: var(--shadow-button-link-md);
+    }
 
-  &:focus-visible:not(:disabled):not(:active):not(.loading) {
-    background-color: var(--color-neutral-700);
+    &:focus-visible {
+      background-color: var(--color-neutral-700);
+    }
   }
 
   &:active:not(:disabled),
@@ -125,19 +128,20 @@
   }
 }
 
-.cancelButton {
-  width: 94px;
+.textSecondary {
   color: var(--color-neutral-800);
   background-color: var(--color-neutral-200);
-  box-shadow: var(--shadow-priority-active);
+  box-shadow: var(--shadow-sm);
 
-  &:hover:not(:disabled):not(:active):not(.loading) {
-    background-color: var(--color-neutral-300);
-    box-shadow: var(--shadow-priority-hover);
-  }
+  &:not(:disabled):not(:active):not(.loading) {
+    &:hover {
+      background-color: var(--color-neutral-300);
+      box-shadow: var(--shadow-button-priority-dropdown);
+    }
 
-  &:focus-visible:not(:disabled):not(:active):not(.loading) {
-    background-color: var(--color-neutral-300);
+    &:focus-visible {
+      background-color: var(--color-neutral-300);
+    }
   }
 
   &:active:not(:disabled),
@@ -151,5 +155,94 @@
     background-color: rgba(243, 243, 243, 0.50);
     cursor: not-allowed;
     color: rgba(28, 28, 28, 0.50);
+  }
+}
+
+.chevron {
+  transition: transform var(--transition-duration) ease;
+}
+
+.chevron.chevronRotated {
+  transform: rotate(180deg);
+}
+
+.square {
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+}
+
+.iconNegative {
+  color: var(--color-primary-400);
+  background-color: var(--color-neutral-200);
+  outline: 2px solid transparent;
+  transition:
+    outline-color var(--transition-duration),
+    background-color var(--transition-duration),
+    box-shadow var(--transition-duration),
+    color var(--transition-duration);
+
+  &:hover:not(:disabled):not(:active):not(.loading),
+  &:focus-visible {
+    background-color: var(--color-primary-400);
+    color: var(--color-base-white);
+    box-shadow: var(--shadow-button-priority-dropdown);
+  }
+
+  &:focus-visible:not(:disabled):not(:active):not(.loading) {
+    border: 2px solid var(--color-neutral-0);
+    outline-color: var(--color-neutral-900);
+  }
+
+  &:active:not(:disabled),
+  &.loading {
+    color: var(--color-neutral-0);
+    background-color: var(--color-primary-300);
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    background-color: var(--color-neutral-200);
+    cursor: not-allowed;
+    color: var(--color-primary-400);
+    opacity: 0.5;
+  }
+}
+
+.iconSecond {
+  color: var(--color-neutral-600);
+  background-color: transparent;
+  outline: 2px solid transparent;
+  transition:
+    outline-color var(--transition-duration),
+    background-color var(--transition-duration),
+    box-shadow var(--transition-duration),
+    color var(--transition-duration);
+
+  &:hover:not(:disabled):not(:active):not(.loading),
+  &:focus-visible {
+    background-color: var(--color-neutral-300);
+    color: var(--color-neutral-900);
+    box-shadow: var(--shadow-button-priority-dropdown);
+  }
+
+  &:focus-visible:not(:disabled):not(:active):not(.loading) {
+    border: 2px solid var(--color-neutral-0);
+    outline-color: var(--color-neutral-900);
+  }
+
+  &:active:not(:disabled),
+  &.loading {
+    color: var(--color-neutral-600);
+    background-color: var(--color-neutral-100);
+    box-shadow: none;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    background-color: transparent;
+    cursor: not-allowed;
+    color: rgba(108, 108, 108, 0.50);
   }
 }

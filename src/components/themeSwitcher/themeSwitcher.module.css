@@ -12,7 +12,7 @@
   border-radius: var(--border-radius);
   background-color: var(--color-base-800);
   color: var(--color-base-600);
-  box-shadow: var(--shadow-header-actions);
+  box-shadow: var(--shadow-theme-switcher);
   outline: 2px solid transparent;
   outline-offset: 2px;
   transition:
@@ -20,7 +20,7 @@
     outline-color var(--transition-duration);
 
   &:hover {
-    box-shadow: var(--shadow-dark-base-hover);
+    box-shadow: var(--shadow-theme-switcher-md);
   }
 
   &:focus-visible {
@@ -34,9 +34,9 @@
     left: var(--padding);
     width: var(--button-size);
     height: var(--button-size);
-    background-color: var(--color-primary-400);
+    background-color: var(--color-primary-base-400);
     border-radius: var(--border-radius-small);
-    box-shadow: var(--shadow-header-actions);
+    box-shadow: var(--shadow-theme-switcher);
     transition:
       transform var(--transition-duration),
       background-color var(--transition-duration);

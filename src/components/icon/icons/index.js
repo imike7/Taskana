@@ -11,6 +11,16 @@ import ChevronBottom from "./ChevronBottom";
 import ArrowTwo from "./ArrowTwo";
 import ChevronTop from "./ChevronTop";
 import Minus from "./Minus";
+import Filter from "./Filter";
+import NewOld from "./NewOld";
+import OldNew from "./OldNew";
+import NumBigToLow from "./NumBigToLow";
+import NumLowToBig from "./NumLowToBig";
+import Importance from "./Importance";
+import Unimportant from "./Unimportant";
+import Az from "./Az";
+import Za from "./Za";
+import Trash from "./Trash";
 
 export {
   Loading,
@@ -26,4 +36,14 @@ export {
   ArrowTwo,
   ChevronTop,
   Minus,
+  Filter,
+  NewOld,
+  OldNew,
+  NumBigToLow,
+  NumLowToBig,
+  Importance,
+  Unimportant,
+  Az,
+  Za,
+  Trash,
 };

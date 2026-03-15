@@ -9,14 +9,22 @@ const Button = (props) => {
     type = "button",
     isDisabled = false,
     isLoading = false,
+    isActive = false,
+    isLabelHidden = false,
     onClick,
     text,
-    submitButton,
-    cancelButton,
-    accentButton,
+    textPrimary,
+    textSecondary,
+    textIconAccent,
+    iconNegative,
+    iconSecond,
     iconName = "",
+    hasChevron,
+    children,
     extraAttrs,
   } = props;
+
+  const title = isLabelHidden ? text : undefined;
 
   return (
     <button
@@ -24,25 +32,38 @@ const Button = (props) => {
         className,
         styles.base,
         isLoading && styles.loading,
-        accentButton && styles.accentButton,
-        submitButton && styles.submitButton,
-        cancelButton && styles.cancelButton,
+        textIconAccent && styles.textIconAccent,
+        textPrimary && styles.textPrimary,
+        textSecondary && styles.textSecondary,
+        iconNegative && styles.iconNegative,
+        iconSecond && styles.iconSecond,
+        isLabelHidden && styles.square
       )}
       type={type}
       disabled={isDisabled}
+      title={title}
+      aria-label={title}
       onClick={onClick}
       {...extraAttrs}
     >
       {isLoading ? (
-          <Icon name="loading" />
+        <Icon name="loading" />
       ) : (
         <>
           {iconName && <Icon name={iconName} />}
-          <span>
-            {text}
-          </span>
+          {!isLabelHidden && text && <span>{text}</span>}
+          {children}
+          {hasChevron && (
+            <Icon
+              name="chevronTop"
+              className={classNames(
+                styles.chevron,
+                isActive && styles.chevronRotated
+              )}
+            />
+          )}
         </>
-        )}
+      )}
     </button>
   )
 }

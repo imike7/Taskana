@@ -16,6 +16,8 @@ const Statistic = (props) => {
       </div>
     );
   }
+
+  return null;
 };
 
 export default Statistic;

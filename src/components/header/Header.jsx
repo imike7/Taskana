@@ -1,9 +1,10 @@
-import { useTask } from '@/hooks';
+import { memo } from 'react';
+import { useEditor } from '@/hooks';
 import { Button, Logo, ThemeSwitcher } from '@/components';
 import styles from './header.module.css';
 
 const Header = () => {
-  const { handleOpenEditor  } = useTask()
+  const { handleOpenCreateEditor } = useEditor()
 
   return (
     <header className={styles.header}>
@@ -12,8 +13,8 @@ const Header = () => {
         <Button
           iconName="plus"
           text="Создать"
-          onClick={handleOpenEditor}
-          accentButton
+          onClick={handleOpenCreateEditor}
+          textIconAccent
         />
         <ThemeSwitcher />
       </div>
@@ -21,4 +22,4 @@ const Header = () => {
   )
 }
 
-export default Header;
+export default memo(Header);

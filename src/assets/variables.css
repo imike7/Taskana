@@ -39,13 +39,14 @@
 
   --min-viewport-width: 1280px;
 
-  --shadow-priority-active: 2px 2px 4px 0 rgba(0, 0, 0, 0.10);
+  --shadow-drop-list: 0 0 12px 4px rgba(0, 0, 0, 0.10);
+  --shadow-sm: 2px 2px 4px 0 rgba(0, 0, 0, 0.10);
   --shadow-header: 2px 2px 4px 0 rgba(0, 0, 0, 0.20);
-  --shadow-default: 2px 2px 4px 0 rgba(0, 0, 0, 0.20);
-  --shadow-priority-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.20);
-  --shadow-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.25);
-  --shadow-header-actions: 2px 2px 4px 0 rgba(0, 0, 0, 0.50);
-  --shadow-dark-base-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.80);
+  --shadow-button-link: 2px 2px 4px 0 rgba(0, 0, 0, 0.20);
+  --shadow-button-priority-dropdown: 2px 8px 12px 0 rgba(0, 0, 0, 0.20);
+  --shadow-button-link-md: 2px 8px 12px 0 rgba(0, 0, 0, 0.25);
+  --shadow-theme-switcher: 2px 2px 4px 0 rgba(0, 0, 0, 0.50);
+  --shadow-theme-switcher-md: 2px 8px 12px 0 rgba(0, 0, 0, 0.80);
 
   --border: 1px solid var(--color-neutral-300);
   --border-radius: 8px;
@@ -60,7 +61,7 @@
 
   --transition-duration: 0.2s;
 
-  --layer-header: 50;
+  --layer-header: 200;
   --layer-task: 100;
   --layer-theme-switcher: 150;
 }
@@ -92,7 +93,8 @@
   --color-secondary-400: #9D6AFF;
   --color-secondary-500: #B792FF;
 
-  --shadow-default: 2px 2px 4px 0 rgba(0, 0, 0, 0.50);
-  --shadow-priority-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.60);
-  --shadow-hover: 2px 8px 12px 0 rgba(0, 0, 0, 0.80);
+  --shadow-drop-list: 0 0 16px 8px rgba(0, 0, 0, 0.40);
+  --shadow-button-link: 2px 2px 4px 0 rgba(0, 0, 0, 0.50);
+  --shadow-button-priority-dropdown: 2px 8px 12px 0 rgba(0, 0, 0, 0.60);
+  --shadow-button-link-md: 2px 8px 12px 0 rgba(0, 0, 0, 0.80);
 }

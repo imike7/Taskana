@@ -32,7 +32,8 @@
   outline-width: 2px;
   transition:
     border-color var(--transition-duration),
-    outline-color var(--transition-duration);
+    outline-color var(--transition-duration),
+    color var(--transition-duration);
 
   &:hover {
     border-color: var(--color-neutral-600);
@@ -63,11 +64,17 @@
   display: inline-flex;
   background-color: transparent;
   color: var(--color-neutral-500);
-  transition: color var(--transition-duration);
+  transition:
+    color var(--transition-duration),
+    border-color var(--transition-duration);
   animation: fadeIn var(--transition-duration) ease-in-out;
 
   &:hover {
     color: var(--color-neutral-800);
+  }
+
+  &:focus-visible {
+    border-color: var(--color-neutral-800);
   }
 }
 

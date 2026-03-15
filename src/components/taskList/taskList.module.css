@@ -3,13 +3,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  max-width: 996px;
+  width: 100%;
+  margin-inline: auto;
   flex: 1;
   padding: 0 24px 24px 24px;
+  row-gap: 8px;
   text-align: center;
+  background-color: var(--color-neutral-0);
   transition:
     color var(--transition-duration),
     background-color var(--transition-duration);
-  margin-top: 4px;
 }
 
 .section {
@@ -25,11 +29,6 @@
     font-size: 18px;
     line-height: calc(4 / 3);
   }
-}
-
-.list {
-  display: flex;
-  row-gap: 8px;
 }
 
 ul {
