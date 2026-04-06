@@ -1,4 +1,4 @@
-const Importance = (props) => {
+export const Importance = (props) => {
   const {
     color = "currentColor",
     ...extraAttrs
@@ -12,5 +12,3 @@ const Importance = (props) => {
     </svg>
   );
 };
-
-export default Importance;

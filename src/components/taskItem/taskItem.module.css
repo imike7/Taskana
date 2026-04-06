@@ -10,30 +10,34 @@
   outline-offset: 2px;
   outline: 2px solid transparent;
   border-radius: var(--border-radius);
-  transition: background-color var(--transition-duration);
+  transition-property: background-color, box-shadow, outline-color;
+  transition-duration: var(--transition-duration);
 
   &:hover {
-    background-color: var(--color-neutral-200);
+    background-color: var(--color-neutral-100);
     box-shadow: var(--shadow-sm);
   }
 
   &:focus-visible {
-    background-color: var(--color-neutral-200);
+    background-color: var(--color-neutral-100);
     outline-color: var(--color-neutral-900);
     box-shadow: var(--shadow-sm);
   }
 
   & button {
     opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--transition-duration), visibility var(--transition-duration);
   }
 
-  &:hover button,
-  &:focus-within button,
+  &:hover button {
+    opacity: 1;
+  }
+
   &:focus-visible button {
     opacity: 1;
-    visibility: visible;
+  }
+
+  & button:focus-visible {
+    opacity: 1;
   }
 }
 
@@ -54,4 +58,20 @@
   overflow-wrap: break-word;
   word-break: break-word;
   flex: 1 1 0;
+}
+
+.editButton {
+  width: 40px;
+  height: 40px;
+  padding-block: 8px;
+}
+
+.editing {
+  background-color: var(--color-neutral-200);
+  box-shadow: var(--shadow-sm);
+}
+
+.active {
+  background-color: var(--color-neutral-100);
+  box-shadow: var(--shadow-sm);
 }

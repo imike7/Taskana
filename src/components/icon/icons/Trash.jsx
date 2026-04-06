@@ -1,4 +1,4 @@
-const Trash = (props) => {
+export const Trash = (props) => {
   const {
     color = "currentColor",
     ...extraAttrs
@@ -10,5 +10,3 @@ const Trash = (props) => {
     </svg>
   );
 };
-
-export default Trash;

@@ -1,4 +1,4 @@
-const Za = (props) => {
+export const Za = (props) => {
   const {
     color = "currentColor",
     ...extraAttrs
@@ -13,5 +13,3 @@ const Za = (props) => {
 
   );
 };
-
-export default Za;

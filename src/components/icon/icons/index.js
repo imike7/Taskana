@@ -1,49 +1,26 @@
-import Loading from "./Loading";
-import Moon from "./Moon";
-import Plus from "./Plus";
-import Storage from "./Storage";
-import Sun from "./Sun";
-import Logo from "./Logo";
-import Edit from "./Edit";
-import Check from "./Check";
-import XMark from "./XMark";
-import ChevronBottom from "./ChevronBottom";
-import ArrowTwo from "./ArrowTwo";
-import ChevronTop from "./ChevronTop";
-import Minus from "./Minus";
-import Filter from "./Filter";
-import NewOld from "./NewOld";
-import OldNew from "./OldNew";
-import NumBigToLow from "./NumBigToLow";
-import NumLowToBig from "./NumLowToBig";
-import Importance from "./Importance";
-import Unimportant from "./Unimportant";
-import Az from "./Az";
-import Za from "./Za";
-import Trash from "./Trash";
+export * from './ArrowTwo'
+export * from './Az'
+export * from './Check'
+export * from './ChevronBottom'
+export * from './ChevronTop'
+export * from './Edit'
+export * from './Filter'
+export * from './Importance'
+export * from './Loading'
+export * from './Logo'
+export * from './Minus'
+export * from './Moon'
+export * from './NewOld'
+export * from './NumBigToLow'
+export * from './NumLowToBig'
+export * from './OldNew'
+export * from './Plus'
+export * from './Storage'
+export * from './Sun'
+export * from './Trash'
+export * from './Unimportant'
+export * from './XMark'
+export * from './Za'
 
-export {
-  Loading,
-  Moon,
-  Plus,
-  Storage,
-  Sun,
-  Logo,
-  Edit,
-  Check,
-  XMark,
-  ChevronBottom,
-  ArrowTwo,
-  ChevronTop,
-  Minus,
-  Filter,
-  NewOld,
-  OldNew,
-  NumBigToLow,
-  NumLowToBig,
-  Importance,
-  Unimportant,
-  Az,
-  Za,
-  Trash,
-};
+
+

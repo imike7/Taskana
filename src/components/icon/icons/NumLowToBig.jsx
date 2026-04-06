@@ -1,4 +1,4 @@
-const NumLowToBig = (props) => {
+export const NumLowToBig = (props) => {
   const {
     color = "currentColor",
     ...extraAttrs
@@ -14,5 +14,3 @@ const NumLowToBig = (props) => {
 
   );
 };
-
-export default NumLowToBig;

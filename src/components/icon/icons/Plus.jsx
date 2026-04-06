@@ -1,4 +1,4 @@
-const Plus = (props) => {
+export const Plus = (props) => {
   const {
     color = 'currentColor',
     ...extraAttrs
@@ -13,5 +13,3 @@ const Plus = (props) => {
     </svg>
   )
 }
-
-export default Plus

@@ -50,7 +50,7 @@ const icons = {
   trash: Trash,
 };
 
-const Icon = (props) => {
+export const Icon = (props) => {
   const {
     name,
     color = "currentColor",
@@ -68,5 +68,3 @@ const Icon = (props) => {
       <IconComponent color={color} className={className}/>
     )
 }
-
-export default Icon;

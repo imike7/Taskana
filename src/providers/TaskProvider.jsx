@@ -75,8 +75,8 @@ export const TaskProvider = ( {children} ) => {
   ]);
 
   return (
-    <TaskContext.Provider value={value}>
+    <TaskContext value={value}>
       {children}
-    </TaskContext.Provider>
+    </TaskContext>
   );
 };

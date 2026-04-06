@@ -3,7 +3,7 @@ import { Icon } from '@/components';
 import { classNames } from '@/utils';
 import styles from './logo.module.css';
 
-const Logo = (props) => {
+export const Logo = memo((props) => {
   const {
     className = "",
   } = props;
@@ -20,6 +20,4 @@ const Logo = (props) => {
       <Icon name="logo"/>
     </a>
   )
-}
-
-export default memo(Logo);
+})

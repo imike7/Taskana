@@ -1,4 +1,4 @@
-const Unimportant = (props) => {
+export const Unimportant = (props) => {
   const {
     color = "currentColor",
     ...extraAttrs
@@ -12,5 +12,3 @@ const Unimportant = (props) => {
     </svg>
   );
 };
-
-export default Unimportant;

@@ -3,7 +3,7 @@ import { useEditor } from '@/hooks';
 import { Button, Logo, ThemeSwitcher } from '@/components';
 import styles from './header.module.css';
 
-const Header = () => {
+export const Header = memo(() => {
   const { handleOpenCreateEditor } = useEditor()
 
   return (
@@ -11,15 +11,14 @@ const Header = () => {
       <Logo />
       <div className={styles.actions}>
         <Button
+          variant="iconAccent"
           iconName="plus"
           text="Создать"
           onClick={handleOpenCreateEditor}
-          textIconAccent
         />
         <ThemeSwitcher />
       </div>
     </header>
   )
-}
+});
 
-export default memo(Header);

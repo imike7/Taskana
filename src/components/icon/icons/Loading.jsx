@@ -1,4 +1,4 @@
-const Loading = (props) => {
+export const Loading = (props) => {
   const {
     color = 'currentColor',
     ...extraAttrs
@@ -16,5 +16,3 @@ const Loading = (props) => {
     </svg>
   )
 }
-
-export default Loading

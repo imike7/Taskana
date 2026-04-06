@@ -1,4 +1,4 @@
-const Check = (props) => {
+export const Check = (props) => {
   const {
     color = 'currentColor',
     ...extraAttrs
@@ -15,5 +15,3 @@ const Check = (props) => {
     </svg>
   )
 }
-
-export default Check

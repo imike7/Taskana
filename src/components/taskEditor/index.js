@@ -1,3 +1,1 @@
-import TaskEditor from './TaskEditor';
-
-export default TaskEditor;
+export * from './TaskEditor'

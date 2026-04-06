@@ -3,7 +3,7 @@ import { NavBar, SideBar } from '@/components';
 import IncomingTasks from '@/pages';
 import styles from './content.module.css';
 
-const Content = () => {
+export const Content = memo(() => {
 
   return (
     <div className={styles.content}>
@@ -12,6 +12,4 @@ const Content = () => {
       <SideBar />
     </div>
   )
-}
-
-export default memo(Content);
+});

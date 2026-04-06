@@ -1,7 +1,7 @@
 import { Illustration } from '@/components';
 import styles from './statistic.module.css';
 
-const Statistic = (props) => {
+export const Statistic = (props) => {
   const {
     statisticData = []
   } = props;
@@ -19,5 +19,3 @@ const Statistic = (props) => {
 
   return null;
 };
-
-export default Statistic;

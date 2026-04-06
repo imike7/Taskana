@@ -1,4 +1,4 @@
-const Sun = (props) => {
+export const Sun = (props) => {
   const {
     color = 'currentColor',
     ...extraAttrs
@@ -13,5 +13,3 @@ const Sun = (props) => {
     </svg>
   )
 }
-
-export default Sun;

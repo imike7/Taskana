@@ -1,23 +1,20 @@
 import { Icon } from '@/components';
 import { classNames } from '@/utils';
+import { VARIANTS } from "@/constants";
 import styles from './button.module.css';
 
-const Button = (props) => {
+export const Button = (props) => {
 
   const {
     className = "",
     type = "button",
+    variant,
     isDisabled = false,
     isLoading = false,
-    isActive = false,
+    disableLoading = false,
     isLabelHidden = false,
     onClick,
     text,
-    textPrimary,
-    textSecondary,
-    textIconAccent,
-    iconNegative,
-    iconSecond,
     iconName = "",
     hasChevron,
     children,
@@ -26,18 +23,22 @@ const Button = (props) => {
 
   const title = isLabelHidden ? text : undefined;
 
+  const variantStyles = {
+    [VARIANTS.TEXT_PRIMARY]: styles.textPrimary,
+    [VARIANTS.TEXT_SECONDARY]: styles.textSecondary,
+    [VARIANTS.ICON_ACCENT]: styles.textIconAccent,
+    [VARIANTS.ICON_NEGATIVE]: styles.iconNegative,
+    [VARIANTS.ICON_SECOND]: styles.iconSecond,
+  };
+
   return (
     <button
       className={classNames(
         className,
         styles.base,
+        variantStyles[variant],
         isLoading && styles.loading,
-        textIconAccent && styles.textIconAccent,
-        textPrimary && styles.textPrimary,
-        textSecondary && styles.textSecondary,
-        iconNegative && styles.iconNegative,
-        iconSecond && styles.iconSecond,
-        isLabelHidden && styles.square
+        isLabelHidden && styles.square,
       )}
       type={type}
       disabled={isDisabled}
@@ -46,7 +47,7 @@ const Button = (props) => {
       onClick={onClick}
       {...extraAttrs}
     >
-      {isLoading ? (
+      {isLoading && !disableLoading ? (
         <Icon name="loading" />
       ) : (
         <>
@@ -54,18 +55,10 @@ const Button = (props) => {
           {!isLabelHidden && text && <span>{text}</span>}
           {children}
           {hasChevron && (
-            <Icon
-              name="chevronTop"
-              className={classNames(
-                styles.chevron,
-                isActive && styles.chevronRotated
-              )}
-            />
+            <Icon name="chevronBottom" />
           )}
         </>
       )}
     </button>
   )
 }
-
-export default Button;

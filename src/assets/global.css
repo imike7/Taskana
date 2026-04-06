@@ -1,6 +1,7 @@
 @import url('./normalize.css');
 @import url('./variables.css');
 @import url('./fonts.css');
+@import url('./utils.css');
 
 body {
   font-family: 'Source Sans 3', sans-serif;
@@ -41,3 +42,8 @@ rect {
   transition: fill var(--transition-duration);
 }
 
+html,
+body {
+  transition: background-color var(--transition-duration);
+  background-color: var(--color-neutral-0);
+}

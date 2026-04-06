@@ -7,7 +7,7 @@ const allImages = {
   note: Note,
 };
 
-const Illustration = (props) => {
+export const Illustration = (props) => {
   const {
     className,
     name,
@@ -26,5 +26,3 @@ const Illustration = (props) => {
     </span>
   );
 }
-
-export default Illustration;

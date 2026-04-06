@@ -1,6 +1,6 @@
 import styles from './footer.module.css';
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className={styles.footer}>
       Проект выполнен в рамках стажировки{' '}
@@ -14,5 +14,3 @@ const Footer = () => {
     </footer>
   )
 }
-
-export default Footer;

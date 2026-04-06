@@ -18,81 +18,43 @@
 
 .customCheckbox  {
   color: var(--color-neutral-800);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 18.5px;
+  height: 18.5px;
   background-color: var(--color-neutral-0);
-  border: 1.5px solid var(--color-neutral-400);
   border-radius: var(--border-radius-small);
   outline: 4px solid transparent;
+  outline-offset: 1.5px;
   transition:
-    border-color var(--transition-duration),
     outline-color var(--transition-duration),
-    background-color var(--transition-duration);
+    background-color var(--transition-duration),
+    box-shadow var(--transition-duration);
+
+  box-shadow: 0 0 0 1.5px var(--priority-border-color);
 
   &:hover {
-    border-color: var(--color-neutral-800);
+    box-shadow: 0 0 0 1.5px var(--priority-hover);
   }
-}
 
-.icon {
-  width: 14px;
-  height: 14px;
-  /*color: var(--color-neutral-0);*/
-  display: block;
-}
-
-.container:hover .customCheckbox:not(.disabled) {
-  border-color: var(--color-neutral-800);
-}
-
-.customCheckbox.disabled {
-  background-color: var(--color-neutral-200);
-  border-color: var(--color-neutral-300);
-  cursor: not-allowed;
-}
-
-.container:has(.disabled) {
-  cursor: not-allowed;
-}
-
-.label {
-  font-size: 16px;
-  color: var(--color-neutral-800);
-}
-
-.label.disabled {
-  color: var(--color-neutral-500);
+  &:focus-visible {
+    outline-color: var(--priority-focused);
+    box-shadow: 0 0 0 1.5px var(--priority-hover);
+  }
 }
 
 .customCheckbox.low {
   --priority-border-color : var(--color-neutral-400);
   --priority-hover: var(--color-neutral-800);
   --priority-focused: var(--color-neutral-400);
-  border-color: var(--priority-border-color );
 }
 
 .customCheckbox.medium {
   --priority-border-color : var(--color-secondary-300);
   --priority-hover: var(--color-secondary-500);
   --priority-focused: var(--color-secondary-100);
-  border-color: var(--priority-border-color );
 }
 
 .customCheckbox.high {
   --priority-border-color : var(--color-primary-300);
   --priority-hover: var(--color-primary-500);
   --priority-focused: var(--color-primary-100);
-  border-color: var(--priority-border-color );
-}
-
-.container:hover .customCheckbox:not(.disabled) {
-  border-color: var(--priority-hover);
-}
-
-.customCheckbox:focus-visible {
-  border-color: var(--priority-hover);
-  outline-color: var(--priority-focused);
 }

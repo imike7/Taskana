@@ -1,4 +1,4 @@
-const Logo = (props) => {
+export const Logo = (props) => {
   const {
     ...extraAttrs
   } = props
@@ -22,5 +22,3 @@ const Logo = (props) => {
     </svg>
   )
 }
-
-export default Logo

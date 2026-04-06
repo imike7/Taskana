@@ -1,11 +1,11 @@
 import { useMemo, memo } from "react";
-import { useDropdown } from "@/hooks";
+import { useDropdown } from "./useDropdown";
 import { Button, Icon } from "@/components";
-import { dropdownItems } from '@/components/dropdown';
+import { DROPDOWN_ITEMS } from "@/constants";
 import { classNames } from "@/utils";
 import styles from './dropdown.module.css'
 
-const Dropdown = () => {
+export const Dropdown = memo(() => {
   const {
     dropdownRef,
     isOpen,
@@ -15,7 +15,7 @@ const Dropdown = () => {
   } = useDropdown()
 
   const renderedItems = useMemo(() => {
-    return dropdownItems.map((item) => {
+    return DROPDOWN_ITEMS.map((item) => {
       const isSelected = selectedItem.value === item.value && item.value !== 'header';
 
       return (
@@ -25,6 +25,7 @@ const Dropdown = () => {
             iconName={item.icon}
             className={classNames(styles.menuButton)}
             onClick={() => handleSelectItem(item)}
+            disableLoading
           >
             {isSelected && (
               <Icon name='check' className={styles.checkIcon}/>
@@ -38,16 +39,16 @@ const Dropdown = () => {
   return (
     <div className={styles.dropdownWrapper} ref={dropdownRef}>
       <Button
-        className={classNames(styles.dropdownButton, isOpen ? styles.activeDropdown : "")}
-        text={`По ${selectedItem ? selectedItem.label.toLowerCase() : ''}`}
-        iconName={selectedItem ? selectedItem.icon : dropdownItems.icon}
+        className={classNames(styles.dropdownButton, isOpen && styles.activeDropdown)}
+        text={`По ${selectedItem?.label.toLowerCase() ?? ''}`}
+        iconName={selectedItem?.icon ?? DROPDOWN_ITEMS.icon}
         hasChevron
         isActive={isOpen}
         onClick={handleOpenDropdown}
+        disableLoading
       />
-
       <div
-        className={classNames(styles.dropdownMenu, isOpen ? styles.isOpen : '')}
+        className={classNames(styles.dropdownMenu, isOpen && styles.isOpen)}
       >
         <div className={styles.dropdownHeader}>
           <Icon name="filter" />
@@ -61,6 +62,4 @@ const Dropdown = () => {
       </div>
     </div>
   );
-};
-
-export default memo(Dropdown);
+})

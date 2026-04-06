@@ -1,4 +1,4 @@
-const ChevronBottom = (props) => {
+export const ChevronBottom = (props) => {
   const {
     color = 'currentColor',
     ...extraAttrs
@@ -15,5 +15,3 @@ const ChevronBottom = (props) => {
     </svg>
   )
 }
-
-export default ChevronBottom

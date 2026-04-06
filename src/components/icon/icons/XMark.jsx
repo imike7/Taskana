@@ -1,4 +1,4 @@
-const XMark = (props) => {
+export const XMark = (props) => {
   const {
     color = 'currentColor',
     ...extraAttrs
@@ -15,5 +15,3 @@ const XMark = (props) => {
     </svg>
   )
 }
-
-export default XMark

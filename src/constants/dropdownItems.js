@@ -1,4 +1,4 @@
-export const dropdownItems = [
+export const DROPDOWN_ITEMS = [
   {
     label: 'Приоритету',
     value: 'priority:asc',
@@ -21,22 +21,23 @@ export const dropdownItems = [
   },
   {
     label: 'Дате создания',
-    value: 'createdAt:asc',
+    value: 'createdAt:desc',
     icon: 'numLowToBig',
   },
   {
     label: 'Дате создания',
-    value: 'createdAt:desc',
+    value: 'createdAt:asc',
     icon: 'numBigToLow',
-  },
-  {
-    label: 'Дате обновления',
-    value: 'updatedAt:asc',
-    icon: 'newOld',
+
   },
   {
     label: 'Дате обновления',
     value: 'updatedAt:desc',
+    icon: 'newOld',
+  },
+  {
+    label: 'Дате обновления',
+    value: 'updatedAt:asc',
     icon: 'oldNew',
   },
 ]

@@ -1,13 +1,13 @@
 import { memo } from 'react'
-import { useTheme } from '@/hooks';
+import { useThemeSwitcher } from './useThemeSwitcher';
 import { Icon } from '@/components';
 import { classNames } from '@/utils';
 import { THEME } from '@/constants';
 import styles from './themeSwitcher.module.css';
 
-const ThemeSwitcher = () => {
+export const ThemeSwitcher = memo(() => {
 
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useThemeSwitcher();
 
   const handleThemeToggle = (event) => {
     event.stopPropagation();
@@ -22,6 +22,7 @@ const ThemeSwitcher = () => {
       aria-label="Переключить тему"
       title="Переключить тему"
       role="tab"
+      data-close-exclude
     >
       <span className={classNames(styles.button, theme === THEME.LIGHT && styles.active)}>
         <Icon name="sun" />
@@ -31,6 +32,4 @@ const ThemeSwitcher = () => {
       </span>
     </button>
   )
-}
-
-export default memo(ThemeSwitcher);
+});

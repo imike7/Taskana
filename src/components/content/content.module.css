@@ -4,6 +4,7 @@
   flex: 1 0 0;
   align-self: stretch;
   height: calc(100dvh - var(--header-height));
+  transition: background-color var(--transition-duration);
 
   & > * {
     height: 100%;

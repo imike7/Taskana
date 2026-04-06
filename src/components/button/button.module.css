@@ -3,16 +3,22 @@
   align-items: center;
   justify-content: start;
   overflow: hidden;
-  gap: 8px;
+  gap: var(--button-gap);
   border-radius: var(--border-radius);
 }
 
-.loading {
-  justify-content: center;
-  box-shadow: none;
+.textIconAccent,
+.textPrimary,
+.textSecondary,
+.iconNegative,
+.iconSecond {
+  &.loading {
+    justify-content: center;
+    box-shadow: none;
 
-  svg {
-    animation: rotate 1s linear infinite;
+    svg {
+      animation: rotate 1s linear infinite;
+    }
   }
 }
 
@@ -20,9 +26,9 @@
   padding: 8px 16px 8px 12px;
   width: 118px;
   height: 40px;
-  gap: var(--button-gap);
   color: var(--color-base-white);
   background-color: var(--color-primary-base-400);
+  font-weight: 600;
   outline: 2px solid transparent;
   outline-offset: 2px;
   box-shadow: var(--shadow-button-link);
@@ -96,6 +102,10 @@
   &:focus-visible {
     outline: 2px solid var(--color-neutral-900);
   }
+
+  &.loading {
+    min-width: 86px;
+  }
 }
 
 .textPrimary {
@@ -122,9 +132,9 @@
 
   &:disabled,
   &[aria-disabled="true"] {
-    background-color: rgba(28, 28, 28, 0.50);
+    background-color: var(--color-button-text-primary-disabled);
     cursor: not-allowed;
-    color: rgba(255, 255, 255, 0.50);
+    color: var(--color-buttons-disabled-text);
   }
 }
 
@@ -152,18 +162,11 @@
 
   &:disabled,
   &[aria-disabled="true"] {
-    background-color: rgba(243, 243, 243, 0.50);
+    background-color: var(--color-button-text-secondary-disabled);
+    box-shadow: var(--shadow-bottons-disabled-text-secondary-icon-negative);
     cursor: not-allowed;
-    color: rgba(28, 28, 28, 0.50);
+    color: var(--color-buttons-disabled-text);
   }
-}
-
-.chevron {
-  transition: transform var(--transition-duration) ease;
-}
-
-.chevron.chevronRotated {
-  transform: rotate(180deg);
 }
 
 .square {
@@ -175,6 +178,7 @@
 .iconNegative {
   color: var(--color-primary-400);
   background-color: var(--color-neutral-200);
+  box-shadow: var(--shadow-sm);
   outline: 2px solid transparent;
   transition:
     outline-color var(--transition-duration),
@@ -203,7 +207,8 @@
 
   &:disabled,
   &[aria-disabled="true"] {
-    background-color: var(--color-neutral-200);
+    background-color: var(--color-button-icon-negative-disabled);
+    box-shadow: var(--shadow-bottons-disabled-text-secondary-icon-negative);
     cursor: not-allowed;
     color: var(--color-primary-400);
     opacity: 0.5;

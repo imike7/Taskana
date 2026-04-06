@@ -1,3 +1,3 @@
-export { classNames } from './classNames';
-export { generateId } from './generateId';
-export { sortFunctions } from './sortFunctions';
+export * from './classNames';
+export * from './generateId';
+export * from './sortFunctions';

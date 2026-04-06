@@ -67,7 +67,7 @@
   display: flex;
   align-items: center;
   justify-content: start;
-  margin-bottom: 4px;
+  color: var(--color-neutral-800);
   overflow: hidden;
   padding: 8px;
   gap: 8px;
@@ -85,6 +85,7 @@
   gap: 4px;
   display: flex;
   flex-direction: column;
+  padding-top: 4px;
 }
 
 .menuItem {
@@ -93,8 +94,9 @@
 
 .menuButton {
   position: relative;
-  display: flex;
+  width: 100%;
   padding: 8px;
+  column-gap: 8px;
   color: var(--color-neutral-800);
   background-color: transparent;
   outline: 2px solid transparent;
@@ -111,8 +113,14 @@
   &:focus-visible {
     outline-color: var(--color-neutral-900);
   }
+
+  & span {
+    flex: 1;
+    text-align: start;
+  }
 }
 
 .checkIcon {
-  margin-left: auto;
+  align-self: end;
 }
+

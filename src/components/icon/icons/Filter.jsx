@@ -1,4 +1,4 @@
-const Filter = (props) => {
+export const Filter = (props) => {
   const {
     color = "currentColor",
     ...extraAttrs
@@ -13,5 +13,3 @@ const Filter = (props) => {
     </svg>
   );
 };
-
-export default Filter;

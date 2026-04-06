@@ -3,7 +3,7 @@ import { Icon } from '@/components';
 import { classNames } from '@/utils';
 import styles from './navBarLink.module.css';
 
-const NavBarLink = (props) => {
+export const NavBarLink = memo((props) => {
   const {
     className,
     href,
@@ -24,6 +24,4 @@ const NavBarLink = (props) => {
       </span>
     </a>
   );
-};
-
-export default memo(NavBarLink);
+})

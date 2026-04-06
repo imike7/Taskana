@@ -1,24 +1,23 @@
-export { default as Button } from './button';
-export { default as Content } from './content'
-export { default as Footer } from './footer'
-export { default as Header } from './header'
-export { default as Logo } from './logo';
-export { default as MainContainer } from './mainContainer'
-export { default as NavBar } from './navBar';
-export { default as SideBar } from './sideBar';
-export { default as TaskList } from './taskList';
-export { default as Icon } from './icon';
-export { default as ThemeSwitcher } from './themeSwitcher';
-export { default as Statistic } from './statistic';
-export { default as Illustration } from './illustration';
-export { default as TaskEditor } from './taskEditor';
-export { default as Input } from './input';
-export { default as PriorityButton } from './priorityButton';
-export { default as NavBarLink } from './navBarLink';
-export { default as TaskItem } from './taskItem';
-export { default as PriorityIcon } from './priorityIcon';
-export { default as Dropdown } from './dropdown';
-
+export * from './button';
+export * from './content';
+export * from './footer';
+export * from './header';
+export * from './icon';
+export * from './logo';
+export * from './mainContainer';
+export * from './navBar';
+export * from './sideBar';
+export * from './taskList';
+export * from './themeSwitcher';
+export * from './statistic';
+export * from './illustration';
+export * from './taskEditor';
+export * from './input';
+export * from './priorityButton';
+export * from './navBarLink'
+export * from './taskItem';
+export * from './priorityIcon';
+export * from './dropdown';
 
 
 

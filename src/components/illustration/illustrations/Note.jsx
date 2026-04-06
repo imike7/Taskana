@@ -1,4 +1,4 @@
-const Note = (props) => {
+export const Note = (props) => {
 
   return (
     <svg width="233" height="168" viewBox="0 0 233 168" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -44,5 +44,3 @@ const Note = (props) => {
     </svg>
   )
 }
-
-export default Note

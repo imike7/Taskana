@@ -3,7 +3,7 @@ import { classNames } from '@/utils';
 import { PRIORITIES } from '@/constants';
 import styles from './priorityButton.module.css';
 
-const PriorityButton = (props) => {
+export const PriorityButton = (props) => {
   const {
     iconName,
     priority,
@@ -25,5 +25,3 @@ const PriorityButton = (props) => {
     </button>
   );
 };
-
-export default PriorityButton;

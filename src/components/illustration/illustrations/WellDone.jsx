@@ -1,4 +1,4 @@
-const WellDone = (props) => {
+export const WellDone = (props) => {
 
   return (
     <svg width="463" height="319" viewBox="0 0 463 319" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
@@ -54,5 +54,3 @@ const WellDone = (props) => {
     </svg>
   )
 }
-
-export default WellDone

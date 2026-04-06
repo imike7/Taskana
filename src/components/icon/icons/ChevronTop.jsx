@@ -1,4 +1,4 @@
-const ChevronTop = (props) => {
+export const ChevronTop = (props) => {
   const {
     color = 'currentColor',
     ...extraAttrs
@@ -15,5 +15,3 @@ const ChevronTop = (props) => {
     </svg>
   )
 }
-
-export default ChevronTop

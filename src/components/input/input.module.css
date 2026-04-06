@@ -30,6 +30,9 @@
   outline-offset: 4px;
   outline-color: transparent;
   outline-width: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   transition:
     border-color var(--transition-duration),
     outline-color var(--transition-duration),

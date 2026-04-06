@@ -1,4 +1,4 @@
-const Edit = (props) => {
+export const Edit = (props) => {
   const {
     color = 'currentColor',
     ...extraAttrs
@@ -13,5 +13,3 @@ const Edit = (props) => {
     </svg>
   )
 }
-
-export default Edit

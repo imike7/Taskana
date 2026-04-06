@@ -5,6 +5,7 @@
   width: calc(100% - (var(--nav-width) + var(--sidebar-width)));
   height: calc(100vh - var(--header-height));
   min-width: 676px;
+  background-color: var(--color-neutral-0);
   transition: background-color var(--transition-duration);
 }
 

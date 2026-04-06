@@ -1,4 +1,4 @@
-const NumBigToLow = (props) => {
+export const NumBigToLow = (props) => {
   const {
     color = "currentColor",
     ...extraAttrs
@@ -13,5 +13,3 @@ const NumBigToLow = (props) => {
     </svg>
   );
 };
-
-export default NumBigToLow;

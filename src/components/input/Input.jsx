@@ -2,7 +2,7 @@ import { useCallback, useMemo } from "react";
 import { Icon } from '@/components';
 import styles from './input.module.css';
 
-const Input = (props) => {
+export const Input = (props) => {
   const {
     value,
     inputRef,
@@ -14,8 +14,12 @@ const Input = (props) => {
 
   const handleReset = useCallback((event) => {
     event.preventDefault()
+    event.stopPropagation()
     onChange("")
-  }, [onChange]);
+    if (inputRef?.current) {
+      inputRef.current.focus();
+    }
+  }, [onChange, inputRef]);
 
   const showResetButton = useMemo(() => {
     return value && value.trim() && !disabled;
@@ -51,5 +55,3 @@ const Input = (props) => {
     </div>
   )
 }
-
-export default Input;

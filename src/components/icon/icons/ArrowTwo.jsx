@@ -1,4 +1,4 @@
-const ArrowTwo = (props) => {
+export const ArrowTwo = (props) => {
   const {
     color = 'currentColor',
     ...extraAttrs
@@ -15,5 +15,3 @@ const ArrowTwo = (props) => {
     </svg>
   )
 }
-
-export default ArrowTwo

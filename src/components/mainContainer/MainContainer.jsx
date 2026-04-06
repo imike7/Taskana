@@ -2,7 +2,7 @@ import { memo } from "react";
 import { Dropdown, TaskList } from '@/components';
 import styles from './mainContainer.module.css';
 
-const MainContainer = () => {
+export const MainContainer = memo(() => {
 
   return (
     <div className={styles.mainContainer}>
@@ -15,6 +15,4 @@ const MainContainer = () => {
       <TaskList />
     </div>
   );
-}
-
-export default memo(MainContainer);
+})

@@ -1,4 +1,4 @@
-const NewOld = (props) => {
+export const NewOld = (props) => {
   const {
     color = "currentColor",
     ...extraAttrs
@@ -16,5 +16,3 @@ const NewOld = (props) => {
     </svg>
   );
 };
-
-export default NewOld;

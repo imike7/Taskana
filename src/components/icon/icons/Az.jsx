@@ -1,4 +1,4 @@
-const Az = (props) => {
+export const Az = (props) => {
   const {
     color = "currentColor",
     ...extraAttrs
@@ -12,5 +12,3 @@ const Az = (props) => {
     </svg>
   );
 };
-
-export default Az;

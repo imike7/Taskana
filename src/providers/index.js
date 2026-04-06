@@ -1,3 +1,2 @@
-export { TaskProvider } from './TaskProvider';
-export { ThemeProvider } from './ThemeProvider';
-export { EditorProvider } from './EditorProvider';
+export * from './TaskProvider';
+export * from './EditorProvider';

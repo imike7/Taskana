@@ -1,3 +1,1 @@
-import PriorityButton from './PriorityButton';
-
-export default PriorityButton;
+export * from './PriorityButton';

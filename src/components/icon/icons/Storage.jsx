@@ -1,4 +1,4 @@
-const Storage = (props) => {
+export const Storage = (props) => {
   const {
     color = 'currentColor',
     ...extraAttrs
@@ -13,5 +13,3 @@ const Storage = (props) => {
     </svg>
   )
 }
-
-export default Storage

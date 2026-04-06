@@ -1,4 +1,4 @@
-const Moon = (props) => {
+export const Moon = (props) => {
   const {
     color = 'currentColor',
     ...extraAttrs
@@ -13,5 +13,3 @@ const Moon = (props) => {
     </svg>
   )
 }
-
-export default Moon
