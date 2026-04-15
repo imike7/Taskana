@@ -1,10 +1,9 @@
-import { memo } from "react";
 import { Button, PriorityIcon } from '@/components';
 import styles from "./taskItem.module.css";
 import { VARIANTS } from "@/constants";
 import { classNames } from "@/utils";
 
-export const TaskItem = memo((props) => {
+export const TaskItem = (props) => {
   const {
     task,
     onEdit,
@@ -29,16 +28,16 @@ export const TaskItem = memo((props) => {
           priority={task.priority}
         />
         <p className={styles.text}>{task.title}</p>
-        <Button
-          data-close-exclude
-          className={styles.editButton}
-          variant={VARIANTS.ICON_SECOND}
-          isLabelHidden
-          iconName="edit"
-          text="Редактировать задачу"
-          onClick={handleEditClick}
-        />
       </div>
+      <Button
+        data-close-exclude
+        className={classNames(styles.editButton, isActive && styles.editButtonActive)}
+        variant={VARIANTS.ICON_SECOND}
+        isLabelHidden
+        iconName="edit"
+        text="Редактировать задачу"
+        onClick={handleEditClick}
+      />
     </li>
   );
-})
+};

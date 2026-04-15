@@ -1,12 +1,7 @@
-import { useEditor } from '@/hooks';
 import { Header, Content, TaskEditor } from '@/components';
 import styles from './appLayout.module.css';
 
 const AppLayout = () => {
-
-  const {
-    editorRef,
-  } = useEditor();
 
   return (
     <div className={styles.appLayout}>
@@ -15,7 +10,7 @@ const AppLayout = () => {
       </h1>
       <Header />
       <Content />
-      <TaskEditor ref={editorRef} />
+      <TaskEditor />
     </div>
   );
 };

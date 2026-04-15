@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState, useMemo } from 'react';
-import { useEditor, useTask } from "@/hooks";
+import { useEditor, useTask } from "@/context";
 
 export const useTaskEditor = () => {
   const {
@@ -12,6 +12,7 @@ export const useTaskEditor = () => {
     isEditorOpen,
     editingTask,
     handleCloseEditor,
+    editorRef,
   } = useEditor();
 
   const [inputValue, setInputValue] = useState("");
@@ -103,11 +104,10 @@ export const useTaskEditor = () => {
     if (!isSubmitDisabled) {
       if (isEditMode && handleUpdateTask) {
         handleUpdateTask(editingTask.id, inputValue, currentPriority);
-        handleCloseEditor();
       } else if (handleCreateTask) {
         handleCreateTask(inputValue, currentPriority);
-        handleCloseEditor();
       }
+      handleCloseEditor();
     }
   }, [isEditMode, handleUpdateTask, handleCreateTask, editingTask, inputValue, currentPriority, isSubmitDisabled, handleCloseEditor]);
 
@@ -124,6 +124,7 @@ export const useTaskEditor = () => {
     inputValue,
     currentPriority,
     isSubmitDisabled,
+    editorRef,
     inputRef,
     handleInputChange,
     handlePriorityClick,

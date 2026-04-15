@@ -1,8 +1,7 @@
-import { memo } from "react";
 import { Dropdown, TaskList } from '@/components';
 import styles from './mainContainer.module.css';
 
-export const MainContainer = memo(() => {
+export const MainContainer = () => {
 
   return (
     <div className={styles.mainContainer}>
@@ -15,4 +14,4 @@ export const MainContainer = memo(() => {
       <TaskList />
     </div>
   );
-})
+};

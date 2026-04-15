@@ -1,9 +1,8 @@
-import { memo } from 'react'
 import { Icon } from '@/components';
 import { classNames } from '@/utils';
 import styles from './navBarLink.module.css';
 
-export const NavBarLink = memo((props) => {
+export const NavBarLink = (props) => {
   const {
     className,
     href,
@@ -24,4 +23,4 @@ export const NavBarLink = memo((props) => {
       </span>
     </a>
   );
-})
+};

@@ -1,11 +1,10 @@
-import { forwardRef} from 'react';
 import { Button, Icon, Input, PriorityButton } from '@/components';
 import { useTaskEditor } from "./useTaskEditor";
 import { classNames } from '@/utils';
 import { PRIORITY_BUTTONS } from "@/constants";
 import styles from './taskEditor.module.css';
 
-export const TaskEditor = forwardRef((props, ref) => {
+export const TaskEditor = () => {
 
   const {
     isEditorOpen,
@@ -13,6 +12,7 @@ export const TaskEditor = forwardRef((props, ref) => {
     inputValue,
     currentPriority,
     isSubmitDisabled,
+    editorRef,
     inputRef,
     handleInputChange,
     handlePriorityClick,
@@ -23,7 +23,7 @@ export const TaskEditor = forwardRef((props, ref) => {
 
   return (
     <div
-      ref={ref}
+      ref={editorRef}
       className={classNames(styles.taskEditor, isEditorOpen && styles.open)}
       inert={!isEditorOpen || undefined}
     >
@@ -85,4 +85,4 @@ export const TaskEditor = forwardRef((props, ref) => {
       </form>
     </div>
   );
-});
+};

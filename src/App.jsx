@@ -1,4 +1,4 @@
-import { TaskProvider, EditorProvider } from '@/providers';
+import { TaskProvider, EditorProvider } from '@/context';
 import AppLayout from "./layouts";
 
 

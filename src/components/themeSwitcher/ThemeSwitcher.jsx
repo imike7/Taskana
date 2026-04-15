@@ -33,3 +33,5 @@ export const ThemeSwitcher = memo(() => {
     </button>
   )
 });
+
+ThemeSwitcher.displayName = 'ThemeSwitcher';

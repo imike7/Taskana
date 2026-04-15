@@ -7,10 +7,8 @@
   align-self: stretch;
   padding: 8px 8px 8px 16px;
   width: 100%;
-  outline-offset: 2px;
-  outline: 2px solid transparent;
   border-radius: var(--border-radius);
-  transition-property: background-color, box-shadow, outline-color;
+  transition-property: background-color, box-shadow;
   transition-duration: var(--transition-duration);
 
   &:hover {
@@ -19,25 +17,12 @@
   }
 
   &:focus-visible {
+    outline: none;
     background-color: var(--color-neutral-100);
-    outline-color: var(--color-neutral-900);
-    box-shadow: var(--shadow-sm);
-  }
-
-  & button {
-    opacity: 0;
-  }
-
-  &:hover button {
-    opacity: 1;
-  }
-
-  &:focus-visible button {
-    opacity: 1;
-  }
-
-  & button:focus-visible {
-    opacity: 1;
+    box-shadow:
+      0 0 0 2px var(--color-neutral-0),
+      0 0 0 4px var(--color-neutral-900),
+      var(--shadow-sm);
   }
 }
 
@@ -64,6 +49,19 @@
   width: 40px;
   height: 40px;
   padding-block: 8px;
+  opacity: 0;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    opacity: 1;
+  }
+}
+
+.editButtonActive {
+  opacity: 1;
 }
 
 .editing {

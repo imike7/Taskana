@@ -1,9 +1,8 @@
-import { memo } from 'react';
 import { NavBarLink } from '@/components';
 import { NAV_ITEMS } from "@/constants";
 import styles from './navBar.module.css';
 
-export const NavBar = memo(() => {
+export const NavBar = () => {
 
   return (
     <nav className={styles.navBar}>
@@ -18,4 +17,4 @@ export const NavBar = memo(() => {
       </ul>
     </nav>
   );
-})
+};

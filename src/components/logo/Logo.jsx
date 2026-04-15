@@ -20,4 +20,6 @@ export const Logo = memo((props) => {
       <Icon name="logo"/>
     </a>
   )
-})
+});
+
+Logo.displayName = "Logo";

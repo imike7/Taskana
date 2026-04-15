@@ -1,11 +1,10 @@
-import { useMemo, memo } from "react";
 import { useDropdown } from "./useDropdown";
 import { Button, Icon } from "@/components";
 import { DROPDOWN_ITEMS } from "@/constants";
 import { classNames } from "@/utils";
 import styles from './dropdown.module.css'
 
-export const Dropdown = memo(() => {
+export const Dropdown = () => {
   const {
     dropdownRef,
     isOpen,
@@ -14,8 +13,7 @@ export const Dropdown = memo(() => {
     handleSelectItem,
   } = useDropdown()
 
-  const renderedItems = useMemo(() => {
-    return DROPDOWN_ITEMS.map((item) => {
+  const renderedItems = DROPDOWN_ITEMS.map((item) => {
       const isSelected = selectedItem.value === item.value && item.value !== 'header';
 
       return (
@@ -34,7 +32,6 @@ export const Dropdown = memo(() => {
         </li>
       );
     });
-  }, [selectedItem.value, handleSelectItem]);
 
   return (
     <div className={styles.dropdownWrapper} ref={dropdownRef}>
@@ -62,4 +59,4 @@ export const Dropdown = memo(() => {
       </div>
     </div>
   );
-})
+};

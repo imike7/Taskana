@@ -11,12 +11,12 @@
   box-shadow: var(--shadow-button-link);
   padding: 8px;
   width: 172px;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+  /*outline: 2px solid transparent;*/
+  /*outline-offset: 2px;*/
   color: var(--color-neutral-0);
   transition:
     color var(--transition-duration),
-    outline-color var(--transition-duration),
+    /*outline-color var(--transition-duration),*/
     background-color var(--transition-duration),
     box-shadow var(--transition-duration);
 
@@ -26,9 +26,13 @@
   }
 
   &:focus-visible {
+    outline: none;
     background-color: var(--color-neutral-700);
-    outline-color: var(--color-neutral-900);
-    box-shadow: var(--shadow-button-link-md);
+    /*outline-color: var(--color-neutral-900);*/
+    box-shadow:
+      0 0 0 2px var(--color-neutral-0),
+      0 0 0 4px var(--color-neutral-900),
+      var(--shadow-button-link-md);
   }
 }
 

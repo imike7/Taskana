@@ -31,7 +31,8 @@ export const EditorProvider = ({ children }) => {
       const timer = setTimeout(() => {
         setEditingTask(null);
       }, 300);
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer)
+      ;
     }
   }, [isEditorOpen]);
 

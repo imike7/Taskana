@@ -1,9 +1,8 @@
-import { memo } from 'react'
-import { useTask, useEditor } from '@/hooks';
+import { useTask, useEditor } from '@/context';
 import { Illustration, TaskItem } from '@/components';
 import styles from './taskList.module.css';
 
-export const TaskList = memo(() => {
+export const TaskList = () => {
 
   const { tasks, handleToggleComplete  } = useTask();
   const { handleOpenEditEditor, editingTask } = useEditor();
@@ -40,4 +39,4 @@ export const TaskList = memo(() => {
       </section>
     </div>
   );
-})
+};

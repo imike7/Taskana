@@ -91,16 +91,16 @@
   font-size: 18px;
   font-weight: 600;
   line-height: calc(4 / 3);
-  outline: 2px solid transparent;
-  outline-offset: 2px;
   transition:
-    outline-color var(--transition-duration),
     background-color var(--transition-duration),
     box-shadow var(--transition-duration),
     color var(--transition-duration);
 
   &:focus-visible {
-    outline: 2px solid var(--color-neutral-900);
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--color-neutral-0),
+      0 0 0 4px var(--color-neutral-900);
   }
 
   &.loading {
@@ -134,7 +134,7 @@
   &[aria-disabled="true"] {
     background-color: var(--color-button-text-primary-disabled);
     cursor: not-allowed;
-    color: var(--color-buttons-disabled-text);
+    color: var(--color-buttons-disabled-text-primary);
   }
 }
 
@@ -165,7 +165,7 @@
     background-color: var(--color-button-text-secondary-disabled);
     box-shadow: var(--shadow-bottons-disabled-text-secondary-icon-negative);
     cursor: not-allowed;
-    color: var(--color-buttons-disabled-text);
+    color: var(--color-buttons-disabled-text-secondary);
   }
 }
 

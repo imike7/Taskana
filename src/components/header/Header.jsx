@@ -1,9 +1,8 @@
-import { memo } from 'react';
-import { useEditor } from '@/hooks';
+import { useEditor } from '@/context';
 import { Button, Logo, ThemeSwitcher } from '@/components';
 import styles from './header.module.css';
 
-export const Header = memo(() => {
+export const Header = () => {
   const { handleOpenCreateEditor } = useEditor()
 
   return (
@@ -20,5 +19,5 @@ export const Header = memo(() => {
       </div>
     </header>
   )
-});
+};
 

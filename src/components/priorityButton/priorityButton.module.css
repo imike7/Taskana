@@ -4,26 +4,27 @@
   height: 40px;
   border-radius: var(--border-radius);
   background-color: transparent;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
   transition:
     color var(--transition-duration),
     background-color var(--transition-duration),
-    box-shadow var(--transition-duration),
-    outline-color var(--transition-duration);
+    box-shadow var(--transition-duration);
 
   &:hover,
   &:focus-visible {
     box-shadow: var(--shadow-button-priority-dropdown);
   }
 
-  &:focus-visible {
-    outline-color: var(--color-neutral-900);
-  }
-
   &:active,
   &.selected {
     box-shadow: var(--shadow-sm);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow:
+      0 0 0 2px var(--color-neutral-0),
+      0 0 0 4px var(--color-neutral-900),
+      var(--shadow-button-priority-dropdown);
   }
 }
 

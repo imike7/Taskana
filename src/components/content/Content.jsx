@@ -1,9 +1,8 @@
-import { memo } from 'react';
 import { NavBar, SideBar } from '@/components';
 import IncomingTasks from '@/pages';
 import styles from './content.module.css';
 
-export const Content = memo(() => {
+export const Content = () => {
 
   return (
     <div className={styles.content}>
@@ -12,4 +11,4 @@ export const Content = memo(() => {
       <SideBar />
     </div>
   )
-});
+};
