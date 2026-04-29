@@ -2,6 +2,7 @@ import { Button, PriorityIcon } from '@/components';
 import styles from "./taskItem.module.css";
 import { VARIANTS } from "@/constants";
 import { classNames } from "@/utils";
+import {useCallback} from "react";
 
 export const TaskItem = (props) => {
   const {
@@ -10,12 +11,12 @@ export const TaskItem = (props) => {
     isActive,
   } = props;
 
-  const handleEditClick = (event) => {
+  const handleEditClick = useCallback((event) => {
     event.stopPropagation();
     if (onEdit) {
       onEdit(task);
     }
-  };
+  }, [onEdit, task, onEdit]);
 
   return (
     <li

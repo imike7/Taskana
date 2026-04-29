@@ -27,13 +27,14 @@ export const EditorProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
+    let timer = null;
     if (!isEditorOpen) {
-      const timer = setTimeout(() => {
+      timer = setTimeout(() => {
         setEditingTask(null);
       }, 300);
-      return () => clearTimeout(timer)
-      ;
     }
+
+    return () => clearTimeout(timer)
   }, [isEditorOpen]);
 
 
