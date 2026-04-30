@@ -1,7 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import { TaskContext } from '@/context';
-import { generateId } from '@/utils';
-import { sortFunctions } from "@/utils";
+import { generateId, sortFunctions } from '@/utils';
 
 export const TaskProvider = ( {children} ) => {
   const [tasks, setTasks] = useState([]);

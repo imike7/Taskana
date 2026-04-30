@@ -4,7 +4,7 @@ import styles from './taskList.module.css';
 
 export const TaskList = () => {
 
-  const { tasks, handleToggleComplete  } = useTask();
+  const { tasks } = useTask();
   const { handleOpenEditEditor, editingTask } = useEditor();
 
   if (!tasks || tasks.length === 0) {
@@ -30,9 +30,9 @@ export const TaskList = () => {
             <TaskItem
               key={task.id}
               task={task}
-              onToggleComplete={handleToggleComplete}
               onEdit={() => handleOpenEditEditor(task)}
               isActive={editingTask?.id === task.id}
+              {...task}
             />
           ))}
         </ul>
