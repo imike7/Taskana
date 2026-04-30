@@ -17,6 +17,8 @@
 }
 
 .customCheckbox  {
+  display: grid;
+  place-items: center;
   color: var(--color-neutral-800);
   width: 18.5px;
   height: 18.5px;
