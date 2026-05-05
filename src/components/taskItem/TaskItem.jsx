@@ -1,14 +1,16 @@
+import { useCallback } from "react";
 import { Button, PriorityIcon } from '@/components';
-import styles from "./taskItem.module.css";
 import { VARIANTS } from "@/constants";
 import { classNames } from "@/utils";
-import {useCallback} from "react";
+import styles from "./taskItem.module.css";
 
 export const TaskItem = (props) => {
   const {
     task,
     onEdit,
     isActive,
+    id,
+    isDone
   } = props;
 
   const handleEditClick = useCallback((event) => {
@@ -16,9 +18,9 @@ export const TaskItem = (props) => {
     if (onEdit) {
       onEdit(task);
     }
-  }, [onEdit, task, onEdit]);
+  }, [onEdit, task]);
 
-  return (
+    return (
     <li
       className={classNames(styles.item, isActive && styles.active)}
       data-priority={task.priority}
@@ -27,8 +29,10 @@ export const TaskItem = (props) => {
       <div className={styles.inner}>
         <PriorityIcon
           priority={task.priority}
+          id={id}
+          isDone={isDone}
         />
-        <p className={styles.text}>{task.title}</p>
+        <p className={classNames(styles.text, isDone && styles.done)}>{task.title}</p>
       </div>
       <Button
         data-close-exclude
@@ -38,6 +42,7 @@ export const TaskItem = (props) => {
         iconName="edit"
         text="Редактировать задачу"
         onClick={handleEditClick}
+        isDisabled={isDone}
       />
     </li>
   );

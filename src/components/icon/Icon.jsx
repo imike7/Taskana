@@ -54,7 +54,8 @@ export const Icon = (props) => {
   const {
     name,
     color = "currentColor",
-    className
+    className,
+    ...extraAttrs
   } = props;
 
   const IconComponent = icons[name];
@@ -65,6 +66,6 @@ export const Icon = (props) => {
   }
 
   return (
-      <IconComponent color={color} className={className}/>
+      <IconComponent color={color} className={className} {...extraAttrs} />
     )
 }
